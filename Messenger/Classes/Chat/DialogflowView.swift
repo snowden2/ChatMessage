@@ -32,6 +32,7 @@ class DialogflowView: RCMessagesView {
 
 		apiAI = ApiAI.shared()
 
+        avatarImageView.image = UIImage(named: "people_blank")
 		loadEarlierShow(false)
 		updateTitleDetails()
 	}
