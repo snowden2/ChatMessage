@@ -11,8 +11,14 @@
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 import RichEditorView
-class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate {
+class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate,StickersDelegate {
+    
+    func didSelectSticker(sticker: String) {
+        
+    }
+    
 
+    @IBOutlet weak var chatInputContentView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet var viewTitle: UIView!
 	@IBOutlet var labelTitle1: UILabel!
@@ -25,15 +31,17 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet var buttonInputAttach: UIButton!
 	@IBOutlet var textInput: RichEditorView!
 	@IBOutlet var buttonInputSend: UIButton!
+    @IBOutlet weak var emoticonBtn: UIButton!
     @IBOutlet weak var boldBtn: UIButton!
     @IBOutlet weak var italicBtn: UIButton!
     @IBOutlet weak var underLineBtn: UIButton!
     @IBOutlet weak var subscriptBtn: UIButton!
     @IBOutlet weak var superscriptBtn: UIButton!
+    @IBOutlet weak var editorScrollView: UIScrollView!
     
 	private var initialized = false
 	private var centerView = CGPoint.zero
-
+    private let scrollViewHeight:CGFloat = 50
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	convenience init() {
 
@@ -74,6 +82,12 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
         avatarImageView.layer.masksToBounds = true
+        
+        chatInputContentView.layer.cornerRadius = 20;
+        chatInputContentView.layer.masksToBounds = true;
+        
+        buttonInputAttach.layer.cornerRadius = 22;
+        buttonInputAttach.layer.masksToBounds = true;
         
         textInput.delegate = self
 		inputPanelInit()
@@ -308,26 +322,39 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
         
 		let heightInput: CGFloat = heightText + (RCMessages().inputViewHeightMin - RCMessages().inputTextHeightMin)
 
-		tableView.frame = CGRect(x: leftSafe, y: 0, width: widthView - leftSafe - rightSafe, height: heightView - bottomSafe - heightInput)
+		tableView.frame = CGRect(x: leftSafe, y: 0, width: widthView - leftSafe - rightSafe, height: heightView - bottomSafe - heightInput-scrollViewHeight)
 
 		var frameViewInput: CGRect = viewInput.frame
 		frameViewInput.origin.y = heightView - bottomSafe - heightInput
 		frameViewInput.size.height = heightInput
 		viewInput.frame = frameViewInput
 
+        var frameEditorView: CGRect = editorScrollView.frame
+        frameEditorView.origin.y = heightView - bottomSafe - heightInput - scrollViewHeight
+        editorScrollView.frame = frameEditorView
+        
 		viewInput.layoutIfNeeded()
 
-        var frameAttach: CGRect = buttonInputAttach.frame
-        frameAttach.origin.y = heightInput - frameAttach.size.height
-        buttonInputAttach.frame = frameAttach
 
         var frameTextInput: CGRect = textInput.frame
         frameTextInput.size.height = heightText
         textInput.frame = frameTextInput
+        
+        var frameChatContainer: CGRect = chatInputContentView.frame
+        frameChatContainer.size.height = heightText
+        chatInputContentView.frame = frameChatContainer
 
+        var frameAttach: CGRect = buttonInputAttach.frame
+        frameAttach.origin.y = heightInput - frameAttach.size.height
+        buttonInputAttach.frame = frameAttach
+        
         var frameSend: CGRect = buttonInputSend.frame
         frameSend.origin.y = heightInput - frameSend.size.height
         buttonInputSend.frame = frameSend
+        
+        var frameEmoticon: CGRect = emoticonBtn.frame
+        frameEmoticon.origin.y = heightInput - frameEmoticon.size.height
+        emoticonBtn.frame = frameEmoticon
 
 		buttonInputSend.isEnabled = textInput.html.count != 0
 
@@ -381,7 +408,10 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	}
 
     @IBAction func actionEmoticon(_ sender: UIButton) {
-        
+        let stickersView = StickersView()
+        stickersView.delegate = self
+        let navController = NavigationController(rootViewController: stickersView)
+        present(navController, animated: true)
     }
     //---------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionInputSend(_ sender: Any) {

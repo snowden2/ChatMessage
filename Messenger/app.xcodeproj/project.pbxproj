@@ -440,10 +440,10 @@
 		29FAEF4E20F396FC00E75BCD /* RCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEF4D20F396FC00E75BCD /* RCMessage.swift */; };
 		29FAEF5020F39A7A00E75BCD /* RCMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEF4F20F39A7A00E75BCD /* RCMessages.swift */; };
 		54E67B3E23057F1000F167B9 /* chat_send@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B3B23057F1000F167B9 /* chat_send@2x.png */; };
-		54E67B3F23057F1000F167B9 /* chat_attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B3C23057F1000F167B9 /* chat_attachment@2x.png */; };
 		54E67B4023057F1000F167B9 /* chat_emoticon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B3D23057F1000F167B9 /* chat_emoticon@2x.png */; };
 		54E67B512305F44700F167B9 /* one_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B4F2305F44700F167B9 /* one_check@2x.png */; };
 		54E67B522305F44700F167B9 /* double_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B502305F44700F167B9 /* double_check@2x.png */; };
+		54E67B562305FE9700F167B9 /* chat_attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B552305FE9700F167B9 /* chat_attachment@2x.png */; };
 		6C0888E250EDDE30BCA104EB /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A8835041C05399266378E9 /* Pods_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -927,10 +927,10 @@
 		29FAEF4D20F396FC00E75BCD /* RCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCMessage.swift; sourceTree = "<group>"; };
 		29FAEF4F20F39A7A00E75BCD /* RCMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCMessages.swift; sourceTree = "<group>"; };
 		54E67B3B23057F1000F167B9 /* chat_send@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_send@2x.png"; sourceTree = "<group>"; };
-		54E67B3C23057F1000F167B9 /* chat_attachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_attachment@2x.png"; sourceTree = "<group>"; };
 		54E67B3D23057F1000F167B9 /* chat_emoticon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_emoticon@2x.png"; sourceTree = "<group>"; };
 		54E67B4F2305F44700F167B9 /* one_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "one_check@2x.png"; sourceTree = "<group>"; };
 		54E67B502305F44700F167B9 /* double_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "double_check@2x.png"; sourceTree = "<group>"; };
+		54E67B552305FE9700F167B9 /* chat_attachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_attachment@2x.png"; sourceTree = "<group>"; };
 		7393A6F3A4D6270AF7ACDCFA /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		AA3F4F54A03FBAE7CEC0B5DB /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		DED94DC0AC66CCD8277DB3AF /* app-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Prefix.pch"; sourceTree = "<group>"; };
@@ -2013,8 +2013,8 @@
 				291CB49A202F7E460078D0B0 /* chat_audio@2x.png */,
 				29BB8F4D1F5C266100560F3F /* chat_back@2x.png */,
 				29BB8F4E1F5C266100560F3F /* chat_callaudio@2x.png */,
+				54E67B552305FE9700F167B9 /* chat_attachment@2x.png */,
 				29BB8F4F1F5C266100560F3F /* chat_callvideo@2x.png */,
-				54E67B3C23057F1000F167B9 /* chat_attachment@2x.png */,
 				54E67B3D23057F1000F167B9 /* chat_emoticon@2x.png */,
 				54E67B3B23057F1000F167B9 /* chat_send@2x.png */,
 				29BB8F501F5C266100560F3F /* chat_camera@2x.png */,
@@ -2595,7 +2595,7 @@
 				295D93862094930400A222CA /* GroupsView.xib in Resources */,
 				298990181F1B6FFD00AC73B3 /* stickerlocal78@2x.png in Resources */,
 				296021A31F2CF5F600544468 /* TermsView.xib in Resources */,
-				54E67B3F23057F1000F167B9 /* chat_attachment@2x.png in Resources */,
+				54E67B562305FE9700F167B9 /* chat_attachment@2x.png in Resources */,
 				291CB49B202F7E460078D0B0 /* chat_audio@2x.png in Resources */,
 				298990221F1B6FFD00AC73B3 /* stickersend10@2x.png in Resources */,
 				296021951F2CF5F600544468 /* KeepMediaView.xib in Resources */,

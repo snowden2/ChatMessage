@@ -16,6 +16,9 @@
                 <outlet property="buttonInputAttach" destination="0NM-CG-5bA" id="Hai-zL-S2L"/>
                 <outlet property="buttonInputSend" destination="aaP-dQ-ykO" id="SVD-OS-0XZ"/>
                 <outlet property="buttonTitle" destination="ig1-I6-dCm" id="4xg-Hh-Xfy"/>
+                <outlet property="chatInputContentView" destination="kz5-fW-nZa" id="5ZJ-xZ-IFu"/>
+                <outlet property="editorScrollView" destination="fMW-kH-k4d" id="lox-1b-vqk"/>
+                <outlet property="emoticonBtn" destination="ErK-1i-YkL" id="ccy-k4-GAm"/>
                 <outlet property="italicBtn" destination="dPo-Hg-A5B" id="88r-ks-W7p"/>
                 <outlet property="labelTitle1" destination="UzC-wc-XB5" id="nPc-dn-Mny"/>
                 <outlet property="labelTitle2" destination="Y8g-Ap-txJ" id="XdR-UU-Lt8"/>
@@ -38,7 +41,7 @@
             <subviews>
                 <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" style="plain" separatorStyle="none" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
                     <rect key="frame" x="0.0" y="0.0" width="441" height="776"/>
-                    <color key="backgroundColor" red="0.92156862745098034" green="0.96078431372549022" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Tng-2m-Rnh"/>
                         <outlet property="delegate" destination="-1" id="9aC-8N-iBw"/>
@@ -51,7 +54,7 @@
                             <rect key="frame" x="397" y="5.5" width="44" height="44"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="44" id="ONT-pv-wjh"/>
+                                <constraint firstAttribute="height" constant="44" id="bg2-0p-wdW"/>
                                 <constraint firstAttribute="width" secondItem="0NM-CG-5bA" secondAttribute="height" multiplier="1:1" id="zvJ-X8-Xcf"/>
                             </constraints>
                             <state key="normal" image="chat_attachment.png"/>
@@ -70,7 +73,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-iO-SfR" customClass="RichEditorView" customModule="RichEditorView">
-                                    <rect key="frame" x="45" y="0.0" width="300" height="41"/>
+                                    <rect key="frame" x="45" y="0.0" width="295" height="41"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-dQ-ykO">
@@ -90,7 +93,7 @@
                             <constraints>
                                 <constraint firstItem="ErK-1i-YkL" firstAttribute="leading" secondItem="kz5-fW-nZa" secondAttribute="leading" constant="10" id="Cqv-lx-WRf"/>
                                 <constraint firstItem="ErK-1i-YkL" firstAttribute="centerY" secondItem="kz5-fW-nZa" secondAttribute="centerY" id="EbE-kH-MGs"/>
-                                <constraint firstItem="aaP-dQ-ykO" firstAttribute="leading" secondItem="Aea-iO-SfR" secondAttribute="trailing" id="Fvx-zw-INJ"/>
+                                <constraint firstItem="aaP-dQ-ykO" firstAttribute="leading" secondItem="Aea-iO-SfR" secondAttribute="trailing" constant="5" id="Fvx-zw-INJ"/>
                                 <constraint firstItem="Aea-iO-SfR" firstAttribute="height" secondItem="kz5-fW-nZa" secondAttribute="height" id="K25-7G-CyN"/>
                                 <constraint firstItem="aaP-dQ-ykO" firstAttribute="centerY" secondItem="kz5-fW-nZa" secondAttribute="centerY" id="OHu-OW-dXD"/>
                                 <constraint firstItem="ErK-1i-YkL" firstAttribute="width" secondItem="aaP-dQ-ykO" secondAttribute="width" id="aJm-Ov-XE4"/>
@@ -300,7 +303,7 @@
     </objects>
     <resources>
         <image name="bold.png" width="28" height="28"/>
-        <image name="chat_attachment.png" width="294.9119873046875" height="294.9119873046875"/>
+        <image name="chat_attachment.png" width="256" height="256"/>
         <image name="chat_emoticon.png" width="256" height="256"/>
         <image name="chat_send.png" width="256" height="256"/>
         <image name="italic.png" width="28" height="28"/>

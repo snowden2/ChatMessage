@@ -83,13 +83,14 @@ class RCMessageCell: UITableViewCell {
 		let rcmessage = messagesView.rcmessage(indexPath)
 
 		let widthTable = messagesView.tableView.frame.size.width
-
-		let xBubble = rcmessage.incoming ? RCMessages().bubbleMarginLeft : (widthTable - RCMessages().bubbleMarginRight - size.width)
-		viewBubble.frame = CGRect(x: xBubble, y: 0, width: size.width, height: size.height+25)
+        let bubbleWidth = rcmessage.incoming ? size.width : size.width > 80 ? size.width : 80
+        
+		let xBubble = rcmessage.incoming ? RCMessages().bubbleMarginLeft : (widthTable - RCMessages().bubbleMarginRight - bubbleWidth)
+		viewBubble.frame = CGRect(x: xBubble, y: 0, width: bubbleWidth, height: size.height+25)
 
         timeLabel.frame = CGRect(x: 0, y: size.height, width: size.width, height: 20)
         if (rcmessage.outgoing) {
-            sendStatusImageView.frame = CGRect(x: size.width-30, y: size.height, width: 25, height: 15)
+            sendStatusImageView.frame = CGRect(x: bubbleWidth-30, y: size.height, width: 25, height: 15)
         }
         
 //        let diameter = RCMessages().avatarDiameter

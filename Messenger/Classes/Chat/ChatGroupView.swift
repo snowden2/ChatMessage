@@ -10,7 +10,7 @@
 // THE SOFTWARE.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AudioDelegate, StickersDelegate, SelectUsersDelegate {
+class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AudioDelegate,  SelectUsersDelegate {
 
 	private var groupId = ""
 	private var chatId = ""
@@ -535,7 +535,7 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 
 	// MARK: - StickersDelegate
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func didSelectSticker(sticker: String) {
+    override func didSelectSticker(sticker: String) {
 
 		let picture = UIImage(named: sticker)
 		messageSend(nil, picture: picture, video: nil, audio: nil)
