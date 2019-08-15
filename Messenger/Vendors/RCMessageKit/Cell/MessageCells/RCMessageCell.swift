@@ -13,6 +13,8 @@
 class RCMessageCell: UITableViewCell {
 
 	var viewBubble: UIView!
+    var timeLabel: UILabel!
+    var sendStatusImageView: UIImageView!
 	var imageAvatar: UIImageView!
 	var labelAvatar: UILabel!
 
@@ -28,9 +30,25 @@ class RCMessageCell: UITableViewCell {
 		backgroundColor = UIColor.clear
 
 		if (viewBubble == nil) {
+            let rcmessage = messagesView.rcmessage(indexPath)
+            
+            timeLabel = UILabel()
+            timeLabel.textColor = UIColor.gray
+            timeLabel.textAlignment = .center
+            timeLabel.text = rcmessage.insertedTime
+            timeLabel.font = timeLabel.font.withSize(10)
+
+            sendStatusImageView = UIImageView()
+            
+            sendStatusImageView.image = rcmessage.sendStatus == "" ? UIImage() : rcmessage.sendStatus == TEXT_READ ? UIImage(named: "double_check") : UIImage(named: "one_check")
+            
 			viewBubble = UIView()
 			viewBubble.layer.cornerRadius = RCMessages().bubbleRadius
+            viewBubble.addSubview(timeLabel)
             
+            if (rcmessage.outgoing) {
+                viewBubble.addSubview(sendStatusImageView)
+            }
 			contentView.addSubview(viewBubble)
 			bubbleGestureRecognizer()
 		}
@@ -67,8 +85,13 @@ class RCMessageCell: UITableViewCell {
 		let widthTable = messagesView.tableView.frame.size.width
 
 		let xBubble = rcmessage.incoming ? RCMessages().bubbleMarginLeft : (widthTable - RCMessages().bubbleMarginRight - size.width)
-		viewBubble.frame = CGRect(x: xBubble, y: 0, width: size.width, height: size.height)
+		viewBubble.frame = CGRect(x: xBubble, y: 0, width: size.width, height: size.height+25)
 
+        timeLabel.frame = CGRect(x: 0, y: size.height, width: size.width, height: 20)
+        if (rcmessage.outgoing) {
+            sendStatusImageView.frame = CGRect(x: size.width-30, y: size.height, width: 25, height: 15)
+        }
+        
 //        let diameter = RCMessages().avatarDiameter
 //        let xAvatar = rcmessage.incoming ? RCMessages().avatarMarginLeft : (widthTable - RCMessages().avatarMarginRight - diameter)
 //        imageAvatar.frame = CGRect(x: xAvatar, y: size.height - diameter, width: diameter, height: diameter)

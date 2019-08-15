@@ -19,7 +19,7 @@ import UIKit
 
 	// Section
 	//-----------------------------------------------------------------------------
-	var sectionHeaderMargin: CGFloat		= 2.0
+	var sectionHeaderMargin: CGFloat		= 14.0
 
 	var sectionHeaderHeight: CGFloat		= 20.0
 	var sectionHeaderLeft: CGFloat			= 10.0
@@ -35,7 +35,7 @@ import UIKit
 	var sectionFooterColor: UIColor			= UIColor.lightGray
 	var sectionFooterFont: UIFont			= UIFont.systemFont(ofSize: 12)
 
-	var sectionFooterMargin: CGFloat		= 2.0
+	var sectionFooterMargin: CGFloat		= 14.0
 
 	// Bubble
 	//-----------------------------------------------------------------------------

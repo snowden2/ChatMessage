@@ -22,6 +22,9 @@ import MapKit
 
 	var text = ""
 
+    var insertedTime = ""
+    var sendStatus = ""
+    
 	var picture_image: UIImage?
 	var picture_width: Int = 0
 	var picture_height: Int = 0
@@ -48,12 +51,14 @@ import MapKit
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(status text: String) {
+    init(status text: String, insertedTime: String, sendStatus: String) {
 
 		super.init()
 
 		type = Int(RC_TYPE_STATUS)
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		incoming = false
 		outgoing = false
 
@@ -61,12 +66,14 @@ import MapKit
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(text: String, incoming incoming_: Bool) {
+	init(text: String, incoming incoming_: Bool, insertedTime: String, sendStatus: String) {
 
 		super.init()
 
 		type = Int(RC_TYPE_TEXT)
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		incoming = incoming_
 		outgoing = !incoming
 
@@ -74,12 +81,14 @@ import MapKit
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(emoji text: String, incoming incoming_: Bool) {
+	init(emoji text: String, incoming incoming_: Bool, insertedTime: String, sendStatus: String) {
 
 		super.init()
 
 		type = Int(RC_TYPE_EMOJI)
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		incoming = incoming_
 		outgoing = !incoming
 
@@ -87,7 +96,7 @@ import MapKit
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(picture image: UIImage?, width: Int, height: Int, incoming incoming_: Bool) {
+	init(picture image: UIImage?, width: Int, height: Int, incoming incoming_: Bool, insertedTime: String, sendStatus: String) {
 
 		super.init()
 
@@ -96,18 +105,22 @@ import MapKit
 		incoming = incoming_
 		outgoing = !incoming
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		picture_image = image
 		picture_width = width
 		picture_height = height
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(video path: String?, duration: Int, incoming incoming_: Bool) {
+	init(video path: String?, duration: Int, incoming incoming_: Bool, insertedTime: String, sendStatus: String) {
 
 		super.init()
 
 		type = Int(RC_TYPE_VIDEO)
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		incoming = incoming_
 		outgoing = !incoming
 
@@ -116,7 +129,7 @@ import MapKit
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(audio path: String?, duration: Int, incoming incoming_: Bool) {
+	init(audio path: String?, duration: Int, incoming incoming_: Bool, insertedTime: String, sendStatus: String) {
 
 		super.init()
 
@@ -125,13 +138,15 @@ import MapKit
 		incoming = incoming_
 		outgoing = !incoming
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		audio_path = path ?? ""
 		audio_duration = duration
 		audio_status = Int(RC_AUDIOSTATUS_STOPPED)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, incoming incoming_: Bool, completion: @escaping () -> Void) {
+	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, incoming incoming_: Bool, insertedTime: String, sendStatus: String, completion: @escaping () -> Void) {
 
 		super.init()
 
@@ -140,6 +155,8 @@ import MapKit
 		incoming = incoming_
 		outgoing = !incoming
 
+        self.insertedTime = insertedTime
+        self.sendStatus = sendStatus
 		self.latitude = latitude
 		self.longitude = longitude
 

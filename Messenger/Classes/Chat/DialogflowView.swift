@@ -46,7 +46,12 @@ class DialogflowView: RCMessagesView {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func addMessage(text: String, incoming: Bool) {
 
-		let rcmessage = RCMessage(text: text, incoming: incoming)
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let createdAt = dateFormatter.string(from: date)
+        
+		let rcmessage = RCMessage(text: text, incoming: incoming, insertedTime: createdAt, sendStatus: "")
 		rcmessages.append(rcmessage)
 		refreshTableView1()
 	}

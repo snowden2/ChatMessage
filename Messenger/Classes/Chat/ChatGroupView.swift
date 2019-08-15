@@ -143,36 +143,46 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 
 			var rcmessage: RCMessage!
 			let incoming = (dbmessage.senderId != FUser.currentId())
+            var sentStatus = ""
+            if (!incoming) {
+                sentStatus = (dbmessage.createdAt > lastRead) ? dbmessage.status : TEXT_READ
+            }
+            
+            let date = Date.date(timestamp: dbmessage.createdAt)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let createdAt = dateFormatter.string(from: date)
+
 
 			if (dbmessage.type == MESSAGE_STATUS) {
-				rcmessage = RCMessage(status: dbmessage.text)
+                rcmessage = RCMessage(status: dbmessage.text, insertedTime: createdAt, sendStatus: sentStatus)
 			}
 
 			if (dbmessage.type == MESSAGE_TEXT) {
-				rcmessage = RCMessage(text: dbmessage.text, incoming: incoming)
+				rcmessage = RCMessage(text: dbmessage.text, incoming: incoming, insertedTime: createdAt, sendStatus: sentStatus)
 			}
 
 			if (dbmessage.type == MESSAGE_EMOJI) {
-				rcmessage = RCMessage(emoji: dbmessage.text, incoming: incoming)
+				rcmessage = RCMessage(emoji: dbmessage.text, incoming: incoming, insertedTime: createdAt, sendStatus: sentStatus)
 			}
 
 			if (dbmessage.type == MESSAGE_PICTURE) {
-				rcmessage = RCMessage(picture: nil, width: dbmessage.pictureWidth, height: dbmessage.pictureHeight, incoming: incoming)
+				rcmessage = RCMessage(picture: nil, width: dbmessage.pictureWidth, height: dbmessage.pictureHeight, incoming: incoming, insertedTime: createdAt, sendStatus: sentStatus)
 				MediaLoader.loadPicture(rcmessage: rcmessage, dbmessage: dbmessage, tableView: tableView)
 			}
 
 			if (dbmessage.type == MESSAGE_VIDEO) {
-				rcmessage = RCMessage(video: nil, duration: dbmessage.videoDuration, incoming: incoming)
+				rcmessage = RCMessage(video: nil, duration: dbmessage.videoDuration, incoming: incoming, insertedTime: createdAt, sendStatus: sentStatus)
 				MediaLoader.loadVideo(rcmessage: rcmessage, dbmessage: dbmessage, tableView: tableView)
 			}
 
 			if (dbmessage.type == MESSAGE_AUDIO) {
-				rcmessage = RCMessage(audio: nil, duration: dbmessage.audioDuration, incoming: incoming)
+				rcmessage = RCMessage(audio: nil, duration: dbmessage.audioDuration, incoming: incoming, insertedTime: createdAt, sendStatus: sentStatus)
 				MediaLoader.loadAudio(rcmessage: rcmessage, dbmessage: dbmessage, tableView: tableView)
 			}
 
 			if (dbmessage.type == MESSAGE_LOCATION) {
-				rcmessage = RCMessage(latitude: dbmessage.latitude, longitude: dbmessage.longitude, incoming: incoming) {
+				rcmessage = RCMessage(latitude: dbmessage.latitude, longitude: dbmessage.longitude, incoming: incoming, insertedTime: createdAt, sendStatus: sentStatus) {
 					self.tableView.reloadData()
 				}
 			}
