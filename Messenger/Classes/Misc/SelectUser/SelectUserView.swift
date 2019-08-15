@@ -12,7 +12,7 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 @objc protocol SelectUserDelegate: class {
 
-	func didSelectUser(dbuser: DBUser)
+    func didSelectUser(dbuser: DBUser, avatarImage: UIImage?)
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -202,7 +202,8 @@ class SelectUserView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 
 		dismiss(animated: true) {
 			let dbuser = self.sections[indexPath.section][indexPath.row]
-			self.delegate?.didSelectUser(dbuser: dbuser)
+            let cell = tableView.cellForRow(at: indexPath) as! SelectUserCell
+            self.delegate?.didSelectUser(dbuser: dbuser, avatarImage: cell.imageUser.image)
 		}
 	}
 

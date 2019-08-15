@@ -15,7 +15,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	private var recipientId = ""
 	private var chatId = ""
 	private var isBlocker = false
-
+    private var avatarImage = UIImage(named: "people_blank")
 	private var dbmessages: RLMResults = DBMessage.objects(with: NSPredicate(value: false))
 	private var rcmessages: [String: RCMessage] = [:]
 	private var avatarImages: [String: UIImage] = [:]
@@ -32,7 +32,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	private var indexForward: IndexPath?
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(recipientId recipientId_: String) {
+    init(recipientId recipientId_: String, avatarImage: UIImage?) {
 
 		super.init(nibName: "RCMessagesView", bundle: nil)
 
@@ -40,6 +40,10 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 
 		chatId = Chat.chatId(recipientId: recipientId)
 		isBlocker = Blocker.isBlocker(userId: recipientId)
+        
+        if (avatarImage != nil) {
+            self.avatarImage = avatarImage
+        }
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -97,6 +101,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 
 		Status.updateLastRead(chatId: chatId)
 
+        self.avatarImageView.image = self.avatarImage
 		updateTitleDetails()
 	}
 
@@ -244,15 +249,16 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func textSectionHeader(_ indexPath: IndexPath) -> String? {
 
-		if (indexPath.section % 3 == 0) {
-			let dbmessage = self.dbmessage(indexPath)
-			let date = Date.date(timestamp: dbmessage.createdAt)
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMMM, HH:mm"
-			return dateFormatter.string(from: date)
-		} else {
-			return nil
-		}
+//        if (indexPath.section % 3 == 0) {
+//            let dbmessage = self.dbmessage(indexPath)
+//            let date = Date.date(timestamp: dbmessage.createdAt)
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "dd MMMM, HH:mm"
+//            return dateFormatter.string(from: date)
+//        } else {
+//            return nil
+//        }
+        return nil
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -280,11 +286,11 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func textSectionFooter(_ indexPath: IndexPath) -> String? {
 		
-		let rcmessage = self.rcmessage(indexPath)
-		if (rcmessage.outgoing) {
-			let dbmessage = self.dbmessage(indexPath)
-			return (dbmessage.createdAt > lastRead) ? dbmessage.status : TEXT_READ
-		}
+//        let rcmessage = self.rcmessage(indexPath)
+//        if (rcmessage.outgoing) {
+//            let dbmessage = self.dbmessage(indexPath)
+//            return (dbmessage.createdAt > lastRead) ? dbmessage.status : TEXT_READ
+//        }
 		return nil
 	}
 

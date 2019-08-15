@@ -13,7 +13,8 @@
 import RichEditorView
 class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate {
 
-	@IBOutlet var viewTitle: UIView!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet var viewTitle: UIView!
 	@IBOutlet var labelTitle1: UILabel!
 	@IBOutlet var labelTitle2: UILabel!
 	@IBOutlet var buttonTitle: UIButton!
@@ -24,7 +25,12 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet var buttonInputAttach: UIButton!
 	@IBOutlet var textInput: RichEditorView!
 	@IBOutlet var buttonInputSend: UIButton!
-
+    @IBOutlet weak var boldBtn: UIButton!
+    @IBOutlet weak var italicBtn: UIButton!
+    @IBOutlet weak var underLineBtn: UIButton!
+    @IBOutlet weak var subscriptBtn: UIButton!
+    @IBOutlet weak var superscriptBtn: UIButton!
+    
 	private var initialized = false
 	private var centerView = CGPoint.zero
 
@@ -36,6 +42,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func richEditor(_ editor: RichEditorView, contentDidChange content: String) {
         inputPanelUpdate()
+        
     }
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
@@ -65,6 +72,9 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
 
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
+        avatarImageView.layer.masksToBounds = true
+        
         textInput.delegate = self
 		inputPanelInit()
 	}
@@ -77,6 +87,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		centerView = view.center
 
 		inputPanelUpdate()
+        
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -108,6 +119,29 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		dismissKeyboard()
 	}
 
+    @IBAction func editorBtnsTapped(_ sender: UIButton) {
+        switch(sender) {
+        case boldBtn:
+            textInput.bold()
+            break
+        case italicBtn:
+            textInput.italic()
+            break
+        case underLineBtn:
+            textInput.underline()
+            break
+        case subscriptBtn:
+            textInput.subscriptText()
+            break
+        case superscriptBtn:
+            textInput.superscript()
+            break
+        default:
+            break
+        }
+        
+    }
+    
 	// MARK: - Load earlier methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func loadEarlierShow(_ show: Bool) {
@@ -238,8 +272,8 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func inputPanelInit() {
 
-		viewInput.backgroundColor = RCMessages().inputViewBackColor
-		textInput.backgroundColor = RCMessages().inputTextBackColor
+//        viewInput.backgroundColor = RCMessages().inputViewBackColor
+//        textInput.backgroundColor = RCMessages().inputTextBackColor
         
 //        textInput.font = RCMessages().inputFont
 		textInput.setTextColor(RCMessages().inputTextTextColor)
@@ -253,10 +287,6 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		textInput.layer.cornerRadius = RCMessages().inputRadius
 		textInput.clipsToBounds = true
         
-        let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
-        toolbar.options = [RichEditorDefaultOption.bold, RichEditorDefaultOption.italic, RichEditorDefaultOption.underline, RichEditorDefaultOption.textColor, RichEditorDefaultOption.textBackgroundColor, RichEditorDefaultOption.subscript, RichEditorDefaultOption.image, RichEditorDefaultOption.link, RichEditorDefaultOption.undo, RichEditorDefaultOption.redo]
-        toolbar.editor = textInput // Previously instantiated RichEditorView
-        textInput.inputAccessoryView = toolbar
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -350,7 +380,10 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		actionAttachMessage()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+    @IBAction func actionEmoticon(_ sender: UIButton) {
+        
+    }
+    //---------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionInputSend(_ sender: Any) {
 
 		if (textInput.html.count != 0) {

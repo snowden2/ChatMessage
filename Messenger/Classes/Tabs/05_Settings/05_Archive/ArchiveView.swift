@@ -76,16 +76,16 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 
 	// MARK: - User actions
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionChatGroup(groupId: String) {
+    func actionChatGroup(groupId: String, avatarImage: UIImage?) {
 
-		let chatGroupView = ChatGroupView(groupId: groupId)
+		let chatGroupView = ChatGroupView(groupId: groupId, avatarImage: avatarImage)
 		navigationController?.pushViewController(chatGroupView, animated: true)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionChatPrivate(recipientId: String) {
+	func actionChatPrivate(recipientId: String, avatarImage: UIImage?) {
 
-		let chatPrivateView = ChatPrivateView(recipientId: recipientId)
+		let chatPrivateView = ChatPrivateView(recipientId: recipientId, avatarImage: avatarImage)
 		navigationController?.pushViewController(chatPrivateView, animated: true)
 	}
 
@@ -186,10 +186,11 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 
 		tableView.deselectRow(at: indexPath, animated: true)
 
+        let cell = tableView.cellForRow(at: indexPath) as! ArchiveCell
 		let dbchat = dbchats[UInt(indexPath.row)] as! DBChat
 
-		if (dbchat.groupId.count != 0)		{	actionChatGroup(groupId: dbchat.groupId)			}
-		if (dbchat.recipientId.count != 0)	{	actionChatPrivate(recipientId: dbchat.recipientId)	}
+        if (dbchat.groupId.count != 0)		{	actionChatGroup(groupId: dbchat.groupId, avatarImage: cell.imageUser.image)			}
+        if (dbchat.recipientId.count != 0)	{	actionChatPrivate(recipientId: dbchat.recipientId, avatarImage: cell.imageUser.image)	}
 	}
 
 	// MARK: - UISearchBarDelegate

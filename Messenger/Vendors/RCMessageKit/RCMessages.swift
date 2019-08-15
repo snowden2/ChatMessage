@@ -19,7 +19,7 @@ import UIKit
 
 	// Section
 	//-----------------------------------------------------------------------------
-	var sectionHeaderMargin: CGFloat		= 8.0
+	var sectionHeaderMargin: CGFloat		= 2.0
 
 	var sectionHeaderHeight: CGFloat		= 20.0
 	var sectionHeaderLeft: CGFloat			= 10.0
@@ -35,7 +35,7 @@ import UIKit
 	var sectionFooterColor: UIColor			= UIColor.lightGray
 	var sectionFooterFont: UIFont			= UIFont.systemFont(ofSize: 12)
 
-	var sectionFooterMargin: CGFloat		= 8.0
+	var sectionFooterMargin: CGFloat		= 2.0
 
 	// Bubble
 	//-----------------------------------------------------------------------------
@@ -45,8 +45,8 @@ import UIKit
 	var bubbleHeaderColor: UIColor			= UIColor.lightGray
 	var bubbleHeaderFont: UIFont			= UIFont.systemFont(ofSize: 12)
 
-	var bubbleMarginLeft: CGFloat			= 40.0
-	var bubbleMarginRight: CGFloat			= 40.0
+	var bubbleMarginLeft: CGFloat			= 5.0
+	var bubbleMarginRight: CGFloat			= 5.0
 	var bubbleRadius: CGFloat				= 15.0
 
 	var bubbleFooterHeight: CGFloat			= 15.0

@@ -19,7 +19,7 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 	private var rcmessages: [String: RCMessage] = [:]
 	private var avatarImages: [String: UIImage] = [:]
 	private var avatarIds: [String] = []
-
+    private var avatarImage = UIImage(named: "people_blank")
 	private var insertCounter: Int = 0
 	private var typingCounter: Int = 0
 	private var lastRead: Int64 = 0
@@ -30,12 +30,15 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 	private var indexForward: IndexPath?
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(groupId groupId_: String) {
+    init(groupId groupId_: String, avatarImage: UIImage?) {
 
 		super.init(nibName: "RCMessagesView", bundle: nil)
 
 		groupId = groupId_
 		chatId = Chat.chatId(groupId: groupId)
+        if (avatarImage != nil) {
+            self.avatarImage = avatarImage
+        }
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,6 +83,7 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 
 		Status.updateLastRead(chatId: chatId)
 
+        self.avatarImageView.image = self.avatarImage
 		updateTitleDetails()
 	}
 
@@ -224,15 +228,15 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func textSectionHeader(_ indexPath: IndexPath) -> String? {
 
-		if (indexPath.section % 3 == 0) {
-			let dbmessage = self.dbmessage(indexPath)
-			let date = Date.date(timestamp: dbmessage.createdAt)
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "dd MMMM, HH:mm"
-			return dateFormatter.string(from: date)
-		} else {
-			return nil
-		}
+//        if (indexPath.section % 3 == 0) {
+//            let dbmessage = self.dbmessage(indexPath)
+//            let date = Date.date(timestamp: dbmessage.createdAt)
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "dd MMMM, HH:mm"
+//            return dateFormatter.string(from: date)
+//        } else {
+//            return nil
+//        }
         return nil
 	}
 
@@ -261,11 +265,11 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func textSectionFooter(_ indexPath: IndexPath) -> String? {
 
-		let rcmessage = self.rcmessage(indexPath)
-		if (rcmessage.outgoing) {
-			let dbmessage = self.dbmessage(indexPath)
-			return (dbmessage.createdAt > lastRead) ? dbmessage.status : TEXT_READ
-		}
+//        let rcmessage = self.rcmessage(indexPath)
+//        if (rcmessage.outgoing) {
+//            let dbmessage = self.dbmessage(indexPath)
+//            return (dbmessage.createdAt > lastRead) ? dbmessage.status : TEXT_READ
+//        }
 		return nil
 	}
 

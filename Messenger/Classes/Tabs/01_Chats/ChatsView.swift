@@ -153,21 +153,21 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 
 		tabBarController?.selectedIndex = 0
 
-		actionChatPrivate(recipientId: userId)
+        actionChatPrivate(recipientId: userId, avatarImage: nil)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionChatGroup(groupId: String) {
+    func actionChatGroup(groupId: String, avatarImage: UIImage?) {
 
-		let chatGroupView = ChatGroupView(groupId: groupId)
+		let chatGroupView = ChatGroupView(groupId: groupId, avatarImage: avatarImage)
 		chatGroupView.hidesBottomBarWhenPushed = true
 		navigationController?.pushViewController(chatGroupView, animated: true)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionChatPrivate(recipientId: String) {
+    func actionChatPrivate(recipientId: String, avatarImage: UIImage?) {
 
-		let chatPrivateView = ChatPrivateView(recipientId: recipientId)
+		let chatPrivateView = ChatPrivateView(recipientId: recipientId, avatarImage: avatarImage)
 		chatPrivateView.hidesBottomBarWhenPushed = true
 		navigationController?.pushViewController(chatPrivateView, animated: true)
 	}
@@ -295,9 +295,9 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 
 	// MARK: - SelectUserDelegate
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func didSelectUser(dbuser: DBUser) {
+    func didSelectUser(dbuser: DBUser, avatarImage: UIImage?) {
 
-		actionChatPrivate(recipientId: dbuser.objectId)
+        actionChatPrivate(recipientId: dbuser.objectId, avatarImage: avatarImage)
 	}
 
 	// MARK: - Cleanup methods
@@ -363,9 +363,10 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		tableView.deselectRow(at: indexPath, animated: true)
 
 		let dbchat = dbchats[UInt(indexPath.row)] as! DBChat
-
-		if (dbchat.groupId.count != 0)		{	actionChatGroup(groupId: dbchat.groupId)			}
-		if (dbchat.recipientId.count != 0)	{	actionChatPrivate(recipientId: dbchat.recipientId)	}
+        let cell = tableView.cellForRow(at: indexPath) as! ChatsCell
+        
+        if (dbchat.groupId.count != 0)		{	actionChatGroup(groupId: dbchat.groupId, avatarImage: cell.imageUser.image)			}
+        if (dbchat.recipientId.count != 0)	{	actionChatPrivate(recipientId: dbchat.recipientId, avatarImage: cell.imageUser.image)	}
 	}
 
 	// MARK: - UISearchBarDelegate

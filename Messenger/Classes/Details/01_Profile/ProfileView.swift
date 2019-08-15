@@ -163,7 +163,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionChatPrivate() {
 
-		let chatPrivateView = ChatPrivateView(recipientId: dbuser.objectId)
+		let chatPrivateView = ChatPrivateView(recipientId: dbuser.objectId, avatarImage: imageUser.image)
 		navigationController?.pushViewController(chatPrivateView, animated: true)
 	}
 

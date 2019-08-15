@@ -193,8 +193,8 @@ class GroupsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		tableView.deselectRow(at: indexPath, animated: true)
 
 		let dbgroup = dbgroups[UInt(indexPath.row)] as! DBGroup
-
-		let chatGroupView = ChatGroupView(groupId: dbgroup.objectId)
+        let cell = tableView.cellForRow(at: indexPath)
+		let chatGroupView = ChatGroupView(groupId: dbgroup.objectId, avatarImage: cell?.imageView?.image)
 		chatGroupView.hidesBottomBarWhenPushed = true
 		navigationController?.pushViewController(chatGroupView, animated: true)
 	}
