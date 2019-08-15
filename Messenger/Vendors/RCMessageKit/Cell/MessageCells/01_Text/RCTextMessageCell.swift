@@ -44,7 +44,14 @@ class RCTextMessageCell: RCMessageCell {
 
 		textView.textColor = rcmessage.incoming ? RCMessages().textTextColorIncoming : RCMessages().textTextColorOutgoing
 
-		textView.text = rcmessage.text
+        let htmlData = NSString(string: rcmessage.text).data(using: String.Encoding.unicode.rawValue)
+        
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+        
+        let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+        
+        textView.attributedText = attributedString
+
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

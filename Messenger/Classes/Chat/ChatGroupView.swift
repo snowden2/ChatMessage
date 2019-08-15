@@ -233,6 +233,7 @@ class ChatGroupView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerC
 		} else {
 			return nil
 		}
+        return nil
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

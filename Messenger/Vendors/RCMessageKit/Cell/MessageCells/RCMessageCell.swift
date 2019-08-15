@@ -30,29 +30,31 @@ class RCMessageCell: UITableViewCell {
 		if (viewBubble == nil) {
 			viewBubble = UIView()
 			viewBubble.layer.cornerRadius = RCMessages().bubbleRadius
+            
 			contentView.addSubview(viewBubble)
 			bubbleGestureRecognizer()
 		}
+        
 
-		if (imageAvatar == nil) {
-			imageAvatar = UIImageView()
-			imageAvatar.layer.masksToBounds = true
-			imageAvatar.layer.cornerRadius = RCMessages().avatarDiameter / 2
-			imageAvatar.backgroundColor = RCMessages().avatarBackColor
-			imageAvatar.isUserInteractionEnabled = true
-			contentView.addSubview(imageAvatar)
-			avatarGestureRecognizer()
-		}
-		imageAvatar.image = messagesView.avatarImage(indexPath)
-
-		if (labelAvatar == nil) {
-			labelAvatar = UILabel()
-			labelAvatar.font = RCMessages().avatarFont
-			labelAvatar.textColor = RCMessages().avatarTextColor
-			labelAvatar.textAlignment = .center
-			contentView.addSubview(labelAvatar)
-		}
-		labelAvatar.text = (imageAvatar.image == nil) ? messagesView.avatarInitials(indexPath) : nil
+//        if (imageAvatar == nil) {
+//            imageAvatar = UIImageView()
+//            imageAvatar.layer.masksToBounds = true
+//            imageAvatar.layer.cornerRadius = RCMessages().avatarDiameter / 2
+//            imageAvatar.backgroundColor = RCMessages().avatarBackColor
+//            imageAvatar.isUserInteractionEnabled = true
+//            contentView.addSubview(imageAvatar)
+//            avatarGestureRecognizer()
+//        }
+//        imageAvatar.image = messagesView.avatarImage(indexPath)
+//
+//        if (labelAvatar == nil) {
+//            labelAvatar = UILabel()
+//            labelAvatar.font = RCMessages().avatarFont
+//            labelAvatar.textColor = RCMessages().avatarTextColor
+//            labelAvatar.textAlignment = .center
+//            contentView.addSubview(labelAvatar)
+//        }
+//        labelAvatar.text = (imageAvatar.image == nil) ? messagesView.avatarInitials(indexPath) : nil
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,10 +69,10 @@ class RCMessageCell: UITableViewCell {
 		let xBubble = rcmessage.incoming ? RCMessages().bubbleMarginLeft : (widthTable - RCMessages().bubbleMarginRight - size.width)
 		viewBubble.frame = CGRect(x: xBubble, y: 0, width: size.width, height: size.height)
 
-		let diameter = RCMessages().avatarDiameter
-		let xAvatar = rcmessage.incoming ? RCMessages().avatarMarginLeft : (widthTable - RCMessages().avatarMarginRight - diameter)
-		imageAvatar.frame = CGRect(x: xAvatar, y: size.height - diameter, width: diameter, height: diameter)
-		labelAvatar.frame = CGRect(x: xAvatar, y: size.height - diameter, width: diameter, height: diameter)
+//        let diameter = RCMessages().avatarDiameter
+//        let xAvatar = rcmessage.incoming ? RCMessages().avatarMarginLeft : (widthTable - RCMessages().avatarMarginRight - diameter)
+//        imageAvatar.frame = CGRect(x: xAvatar, y: size.height - diameter, width: diameter, height: diameter)
+//        labelAvatar.frame = CGRect(x: xAvatar, y: size.height - diameter, width: diameter, height: diameter)
 	}
 
 	// MARK: - Gesture recognizer methods
@@ -88,9 +90,9 @@ class RCMessageCell: UITableViewCell {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func avatarGestureRecognizer() {
 
-		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(actionTapAvatar))
-		imageAvatar.addGestureRecognizer(tapGesture)
-		tapGesture.cancelsTouchesInView = false
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(actionTapAvatar))
+//        imageAvatar.addGestureRecognizer(tapGesture)
+//        tapGesture.cancelsTouchesInView = false
 	}
 
 	// MARK: - User actions
@@ -104,8 +106,8 @@ class RCMessageCell: UITableViewCell {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func actionTapAvatar() {
 
-		messagesView.view.endEditing(true)
-		messagesView.actionTapAvatar(indexPath)
+//        messagesView.view.endEditing(true)
+//        messagesView.actionTapAvatar(indexPath)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

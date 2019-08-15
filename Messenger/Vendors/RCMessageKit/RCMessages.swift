@@ -86,8 +86,8 @@ import UIKit
 	var textBubbleWidthMin: CGFloat			= 45.0
 	var textBubbleHeightMin: CGFloat		= 35.0
 
-	var textBubbleColorOutgoing: UIColor	= UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
-	var textBubbleColorIncoming: UIColor	= UIColor(red: 230/255, green: 229/255, blue: 234/255, alpha: 1.0)
+	var textBubbleColorOutgoing: UIColor	= UIColor(red: 172/255, green: 206/255, blue: 238/255, alpha: 1.0)
+	var textBubbleColorIncoming: UIColor	= UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
 	var textTextColorOutgoing: UIColor		= UIColor.white
 	var textTextColorIncoming: UIColor		= UIColor.black
 
@@ -167,8 +167,8 @@ import UIKit
 
 	var inputFont: UIFont					= UIFont.systemFont(ofSize: 17)
 
-	var inputViewHeightMin: CGFloat			= 44.0
-	var inputTextHeightMin: CGFloat			= 30.0
+	var inputViewHeightMin: CGFloat			= 69.0
+	var inputTextHeightMin: CGFloat			= 55.0
 	var inputTextHeightMax: CGFloat			= 110.0
 
 	var inputBorderWidth: CGFloat			= 1.0

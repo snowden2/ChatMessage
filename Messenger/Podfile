@@ -13,7 +13,7 @@ target 'app' do
 	pod 'OneSignal'
 	pod 'Realm'
 	pod 'SinchRTC'
-
+  pod 'RichEditorView'
 	pod 'MBProgressHUD'
 	pod 'MGSwipeTableCell'
 	pod 'NYTPhotoViewer', '1.2.0'

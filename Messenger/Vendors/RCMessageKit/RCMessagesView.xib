@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,7 @@
                 <outlet property="labelTitle1" destination="UzC-wc-XB5" id="nPc-dn-Mny"/>
                 <outlet property="labelTitle2" destination="Y8g-Ap-txJ" id="XdR-UU-Lt8"/>
                 <outlet property="tableView" destination="i5M-Pr-FkT" id="lyD-HE-CdL"/>
-                <outlet property="textInput" destination="WF4-Ti-KqT" id="fwE-JZ-jPs"/>
+                <outlet property="textInput" destination="Aea-iO-SfR" id="xbB-aC-7D4"/>
                 <outlet property="view" destination="PpO-Gc-0B7" id="ccK-Tu-foM"/>
                 <outlet property="viewInput" destination="xuU-RB-86v" id="9Gh-xP-iGY"/>
                 <outlet property="viewLoadEarlier" destination="rme-m1-pJF" id="ibT-XO-YJi"/>
@@ -32,7 +33,7 @@
                 <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" bouncesZoom="NO" style="plain" separatorStyle="none" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="0.71071742957746475" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Tng-2m-Rnh"/>
                         <outlet property="delegate" destination="-1" id="9aC-8N-iBw"/>
@@ -51,7 +52,7 @@
                                 <action selector="actionInputAttach:" destination="-1" eventType="touchUpInside" id="9NP-aD-vv0"/>
                             </connections>
                         </button>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-Ti-KqT">
+                        <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-Ti-KqT">
                             <rect key="frame" x="44" y="7" width="220" height="30"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,6 +61,10 @@
                                 <outlet property="delegate" destination="-1" id="ysY-ng-J5m"/>
                             </connections>
                         </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-iO-SfR" customClass="RichEditorView" customModule="RichEditorView">
+                            <rect key="frame" x="44" y="7" width="220" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-dQ-ykO">
                             <rect key="frame" x="270" y="0.0" width="44" height="44"/>
                             <constraints>
@@ -74,8 +79,11 @@
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="WF4-Ti-KqT" firstAttribute="leading" secondItem="xuU-RB-86v" secondAttribute="leading" constant="44" id="02r-Nl-wYU"/>
+                        <constraint firstItem="Aea-iO-SfR" firstAttribute="leading" secondItem="xuU-RB-86v" secondAttribute="leading" constant="44" id="0y3-1P-uOF"/>
+                        <constraint firstAttribute="trailing" secondItem="Aea-iO-SfR" secondAttribute="trailing" constant="56" id="3gO-4H-ceY"/>
                         <constraint firstAttribute="bottom" secondItem="0NM-CG-5bA" secondAttribute="bottom" id="45i-FC-tQT"/>
                         <constraint firstAttribute="trailing" secondItem="WF4-Ti-KqT" secondAttribute="trailing" constant="56" id="BOa-0Q-yIe"/>
+                        <constraint firstItem="Aea-iO-SfR" firstAttribute="top" secondItem="xuU-RB-86v" secondAttribute="top" constant="7" id="F5o-2y-bvl"/>
                         <constraint firstItem="WF4-Ti-KqT" firstAttribute="top" secondItem="xuU-RB-86v" secondAttribute="top" constant="7" id="GAb-8z-4t3"/>
                         <constraint firstItem="aaP-dQ-ykO" firstAttribute="top" secondItem="xuU-RB-86v" secondAttribute="top" id="K5s-ct-t38"/>
                         <constraint firstAttribute="height" constant="44" id="Kca-U5-bhs"/>
@@ -84,6 +92,7 @@
                         <constraint firstAttribute="trailing" secondItem="aaP-dQ-ykO" secondAttribute="trailing" constant="6" id="Wny-R1-Wnx"/>
                         <constraint firstItem="0NM-CG-5bA" firstAttribute="top" secondItem="xuU-RB-86v" secondAttribute="top" id="gYi-V5-mIw"/>
                         <constraint firstAttribute="bottom" secondItem="aaP-dQ-ykO" secondAttribute="bottom" id="jT3-iW-QV2"/>
+                        <constraint firstAttribute="bottom" secondItem="Aea-iO-SfR" secondAttribute="bottom" constant="7" id="rdF-hF-DOm"/>
                     </constraints>
                 </view>
             </subviews>
@@ -169,7 +178,7 @@
         </view>
     </objects>
     <resources>
-        <image name="rcmessage_attach.png" width="22" height="22"/>
-        <image name="rcmessage_send.png" width="22" height="22"/>
+        <image name="rcmessage_attach.png" width="35.200000762939453" height="35.200000762939453"/>
+        <image name="rcmessage_send.png" width="35.200000762939453" height="35.200000762939453"/>
     </resources>
 </document>

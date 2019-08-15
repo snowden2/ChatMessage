@@ -10,7 +10,8 @@
 // THE SOFTWARE.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
+import RichEditorView
+class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate {
 
 	@IBOutlet var viewTitle: UIView!
 	@IBOutlet var labelTitle1: UILabel!
@@ -21,7 +22,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet var viewTypingIndicator: UIView!
 	@IBOutlet var viewInput: UIView!
 	@IBOutlet var buttonInputAttach: UIButton!
-	@IBOutlet var textInput: UITextView!
+	@IBOutlet var textInput: RichEditorView!
 	@IBOutlet var buttonInputSend: UIButton!
 
 	private var initialized = false
@@ -33,6 +34,9 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.init(nibName: "RCMessagesView", bundle: nil)
 	}
 
+    func richEditor(_ editor: RichEditorView, contentDidChange content: String) {
+        inputPanelUpdate()
+    }
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 
@@ -61,6 +65,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
 
+        textInput.delegate = self
 		inputPanelInit()
 	}
 
@@ -235,18 +240,23 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 
 		viewInput.backgroundColor = RCMessages().inputViewBackColor
 		textInput.backgroundColor = RCMessages().inputTextBackColor
+        
+//        textInput.font = RCMessages().inputFont
+		textInput.setTextColor(RCMessages().inputTextTextColor)
 
-		textInput.font = RCMessages().inputFont
-		textInput.textColor = RCMessages().inputTextTextColor
-
-		textInput.textContainer.lineFragmentPadding = 0
-		textInput.textContainerInset = RCMessages().inputInset
+//        textInput.textContainer.lineFragmentPadding = 0
+//        textInput.textContainerInset = RCMessages().inputInset
 
 		textInput.layer.borderColor = RCMessages().inputBorderColor
 		textInput.layer.borderWidth = RCMessages().inputBorderWidth
 
 		textInput.layer.cornerRadius = RCMessages().inputRadius
 		textInput.clipsToBounds = true
+        
+        let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        toolbar.options = [RichEditorDefaultOption.bold, RichEditorDefaultOption.italic, RichEditorDefaultOption.underline, RichEditorDefaultOption.textColor, RichEditorDefaultOption.textBackgroundColor, RichEditorDefaultOption.subscript, RichEditorDefaultOption.image, RichEditorDefaultOption.link, RichEditorDefaultOption.undo, RichEditorDefaultOption.redo]
+        toolbar.editor = textInput // Previously instantiated RichEditorView
+        textInput.inputAccessoryView = toolbar
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -265,7 +275,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 
 		heightText = CGFloat.maximum(RCMessages().inputTextHeightMin, sizeText.height)
 		heightText = CGFloat.minimum(RCMessages().inputTextHeightMax, heightText)
-
+        
 		let heightInput: CGFloat = heightText + (RCMessages().inputViewHeightMin - RCMessages().inputTextHeightMin)
 
 		tableView.frame = CGRect(x: leftSafe, y: 0, width: widthView - leftSafe - rightSafe, height: heightView - bottomSafe - heightInput)
@@ -277,22 +287,22 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 
 		viewInput.layoutIfNeeded()
 
-		var frameAttach: CGRect = buttonInputAttach.frame
-		frameAttach.origin.y = heightInput - frameAttach.size.height
-		buttonInputAttach.frame = frameAttach
+        var frameAttach: CGRect = buttonInputAttach.frame
+        frameAttach.origin.y = heightInput - frameAttach.size.height
+        buttonInputAttach.frame = frameAttach
 
-		var frameTextInput: CGRect = textInput.frame
-		frameTextInput.size.height = heightText
-		textInput.frame = frameTextInput
+        var frameTextInput: CGRect = textInput.frame
+        frameTextInput.size.height = heightText
+        textInput.frame = frameTextInput
 
-		var frameSend: CGRect = buttonInputSend.frame
-		frameSend.origin.y = heightInput - frameSend.size.height
-		buttonInputSend.frame = frameSend
+        var frameSend: CGRect = buttonInputSend.frame
+        frameSend.origin.y = heightInput - frameSend.size.height
+        buttonInputSend.frame = frameSend
 
-		buttonInputSend.isEnabled = textInput.text.count != 0
+		buttonInputSend.isEnabled = textInput.html.count != 0
 
 		let offset = CGPoint(x: 0, y: sizeText.height - heightText)
-		textInput.setContentOffset(offset, animated: false)
+//        textInput.setContentOffset(offset, animated: false)
 
 		scroll(toBottom: false)
 	}
@@ -343,10 +353,10 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionInputSend(_ sender: Any) {
 
-		if (textInput.text.count != 0) {
-			actionSendMessage(textInput.text)
+		if (textInput.html.count != 0) {
+			actionSendMessage(textInput.html)
 			dismissKeyboard()
-			textInput.text = nil
+			textInput.html = ""
 			inputPanelUpdate()
 		}
 	}
