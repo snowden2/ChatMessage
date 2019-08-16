@@ -19,6 +19,7 @@ target 'app' do
 	pod 'NYTPhotoViewer', '1.2.0'
 	pod 'ProgressHUD'
 	pod 'Reachability'
+  pod 'EFColorPicker'
 	pod 'RNCryptor-objc'
 	pod 'SoundManager'
 end

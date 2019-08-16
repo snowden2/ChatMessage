@@ -11,7 +11,9 @@
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 import RichEditorView
-class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate,StickersDelegate {
+import EFColorPicker
+
+class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate,StickersDelegate,EFColorSelectionViewControllerDelegate {
     
     func didSelectSticker(sticker: String) {
         
@@ -50,6 +52,59 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
         inputPanelUpdate()
         
     }
+    
+    func presentColorPicker() {
+        let colorSelectionController = EFColorSelectionViewController()
+        let navCtrl = UINavigationController(rootViewController: colorSelectionController)
+        navCtrl.navigationBar.backgroundColor = UIColor.white
+        navCtrl.navigationBar.isTranslucent = false
+        navCtrl.modalPresentationStyle = UIModalPresentationStyle.popover
+        navCtrl.popoverPresentationController?.sourceView = editorScrollView
+        navCtrl.popoverPresentationController?.sourceRect = editorScrollView.bounds
+        navCtrl.preferredContentSize = colorSelectionController.view.systemLayoutSizeFitting(
+            UIView.layoutFittingCompressedSize
+        )
+        
+        colorSelectionController.delegate = self
+        colorSelectionController.color = self.view.backgroundColor ?? UIColor.white
+        colorSelectionController.setMode(mode: EFColorSelectionMode.all)
+        
+        if UIUserInterfaceSizeClass.compact == self.traitCollection.horizontalSizeClass {
+            let doneBtn: UIBarButtonItem = UIBarButtonItem(
+                title: NSLocalizedString("Done", comment: ""),
+                style: UIBarButtonItem.Style.done,
+                target: self,
+                action: #selector(ef_dismissViewController(sender:))
+            )
+            colorSelectionController.navigationItem.rightBarButtonItem = doneBtn
+        }
+        self.present(navCtrl, animated: true, completion: nil)
+
+    }
+    
+    // MARK:- Private
+    @objc func ef_dismissViewController(sender: UIBarButtonItem) {
+        let superSelf = self
+        self.dismiss(animated: true) {
+            [weak self] in
+            if let _weakSelf = self, let selectedColor =  _weakSelf.view.backgroundColor{
+                
+                superSelf.textInput.setTextColor(selectedColor)
+                _weakSelf.view.backgroundColor = UIColor.white
+                // TODO: You can do something here when EFColorPicker close.
+                print("EFColorPicker closed.")
+            }
+        }
+    }
+    
+    func colorViewController(_ colorViewCntroller: EFColorSelectionViewController, didChangeColor color: UIColor) {
+        self.view.backgroundColor = color
+        
+        // TODO: You can do something here when color changed.
+        print("New color: " + color.debugDescription)
+    }
+
+    
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 
@@ -212,6 +267,12 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
         case 5016: //undo
             textInput.redo()
             break
+        case 5017: //text color
+            presentColorPicker()
+            break
+        case 5018: //text background color
+            presentColorPicker()
+            break
         default:
             break
         }
@@ -314,6 +375,10 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 
 	// MARK: - Keyboard methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
+    
+    @objc func didSelectColor() {
+        
+    }
 	@objc func keyboardShow(_ notification: Notification?) {
 
 		if let info = notification?.userInfo {
@@ -352,8 +417,9 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 //        textInput.backgroundColor = RCMessages().inputTextBackColor
         
 //        textInput.font = RCMessages().inputFont
+        
 		textInput.setTextColor(RCMessages().inputTextTextColor)
-
+        textInput.setFontSize(100)
 //        textInput.textContainer.lineFragmentPadding = 0
 //        textInput.textContainerInset = RCMessages().inputInset
 
@@ -485,6 +551,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		if (textInput.html.count != 0) {
 			actionSendMessage(textInput.html)
 			dismissKeyboard()
+            textInput.focus()
 			textInput.html = ""
 			inputPanelUpdate()
 		}

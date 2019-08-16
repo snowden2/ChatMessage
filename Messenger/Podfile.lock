@@ -1,5 +1,6 @@
 PODS:
   - ApiAI/Core (0.7.2)
+  - EFColorPicker (5.1.0)
   - Firebase/Auth (6.6.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.2.2)
@@ -111,6 +112,7 @@ PODS:
 
 DEPENDENCIES:
   - ApiAI/Core
+  - EFColorPicker
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -130,6 +132,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ApiAI
+    - EFColorPicker
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -162,6 +165,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ApiAI: d4b49d3736f33ce6f3ef66dc33c0e0fccb23579e
+  EFColorPicker: 6fa37bd9cde0f8dc58762698f1e9809f554dfe6c
   Firebase: a2b5951f30ff38fd3b3bdae9c7d340f940fd3c51
   FirebaseAnalytics: 48414ae5cbf6976d8a2f7177e0466540e5ab33ce
   FirebaseAuth: 2be1924ddbc741fe2a02cb6963ca747e09a2e05c
@@ -192,6 +196,6 @@ SPEC CHECKSUMS:
   SinchRTC: ed769fd3fec5940e6b75ed310e93796d62149810
   SoundManager: 99ae328a3ec9b259db774c9851a65feeceba8183
 
-PODFILE CHECKSUM: d0ccf37d9d1eee25e88ee1d497c493db4b21d1f0
+PODFILE CHECKSUM: f693b87a43881d665fd251cd4736569960b5f8d7
 
 COCOAPODS: 1.6.1
