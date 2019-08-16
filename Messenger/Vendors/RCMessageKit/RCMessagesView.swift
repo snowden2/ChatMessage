@@ -32,11 +32,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet var textInput: RichEditorView!
 	@IBOutlet var buttonInputSend: UIButton!
     @IBOutlet weak var emoticonBtn: UIButton!
-    @IBOutlet weak var boldBtn: UIButton!
-    @IBOutlet weak var italicBtn: UIButton!
-    @IBOutlet weak var underLineBtn: UIButton!
-    @IBOutlet weak var subscriptBtn: UIButton!
-    @IBOutlet weak var superscriptBtn: UIButton!
+    
     @IBOutlet weak var editorScrollView: UIScrollView!
     @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
@@ -135,22 +131,86 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		dismissKeyboard()
 	}
 
+    func insertEditorLink() {
+        let alertController = UIAlertController(title: "Insert Link", message: "Insert link and description", preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Link"
+            textField.textColor = UIColor.blue
+            textField.clearButtonMode = .whileEditing
+            textField.borderStyle = .roundedRect
+        })
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Description"
+            textField.textColor = UIColor.blue
+            textField.clearButtonMode = .whileEditing
+            textField.borderStyle = .roundedRect
+        })
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let textfields = alertController.textFields
+            let linkfield = textfields?[0]
+            let descriptionfiled = textfields?[1]
+            if let linkText = linkfield?.text, let descriptionText = descriptionfiled?.text{
+                self.textInput.insertLink(linkText, title: descriptionText)
+                
+            }
+            
+        }))
+        present(alertController, animated: true)
+
+
+    }
     @IBAction func editorBtnsTapped(_ sender: UIButton) {
-        switch(sender) {
-        case boldBtn:
+        switch(sender.tag) {
+        case 5000: //bold
             textInput.bold()
             break
-        case italicBtn:
+        case 5001: //italic
             textInput.italic()
             break
-        case underLineBtn:
+        case 5002: //underline
             textInput.underline()
             break
-        case subscriptBtn:
+        case 5003: //subscript
             textInput.subscriptText()
             break
-        case superscriptBtn:
+        case 5004: //superscript
             textInput.superscript()
+            break
+        case 5005: //h1
+            textInput.header(1)
+            break
+        case 5006: //h2
+            textInput.header(2)
+            break
+        case 5007: //h3
+            textInput.header(3)
+            break
+        case 5008: //h4
+            textInput.header(4)
+            break
+        case 5009: //Strikethrough
+            textInput.strikethrough()
+            break
+        case 5010: //link
+            insertEditorLink()
+            break
+        case 5011: //image
+//            textInput.insert
+            break
+        case 5012: //justify left
+            textInput.alignLeft()
+            break
+        case 5013: //justify center
+            textInput.alignCenter()
+            break
+        case 5014: //justify right
+            textInput.alignRight()
+            break
+        case 5015: //undo
+            textInput.undo()
+            break
+        case 5016: //undo
+            textInput.redo()
             break
         default:
             break
