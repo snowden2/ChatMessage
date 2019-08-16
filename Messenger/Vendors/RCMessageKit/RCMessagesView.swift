@@ -38,6 +38,8 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var subscriptBtn: UIButton!
     @IBOutlet weak var superscriptBtn: UIButton!
     @IBOutlet weak var editorScrollView: UIScrollView!
+    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
     
 	private var initialized = false
 	private var centerView = CGPoint.zero
@@ -83,13 +85,13 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
         avatarImageView.layer.masksToBounds = true
         
-        chatInputContentView.layer.cornerRadius = 20;
+        chatInputContentView.layer.cornerRadius = 25;
         chatInputContentView.layer.masksToBounds = true;
         
-        buttonInputAttach.layer.cornerRadius = 22;
         buttonInputAttach.layer.masksToBounds = true;
         
         textInput.delegate = self
+        
 		inputPanelInit()
 	}
 
@@ -295,70 +297,74 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 //        textInput.textContainer.lineFragmentPadding = 0
 //        textInput.textContainerInset = RCMessages().inputInset
 
-		textInput.layer.borderColor = RCMessages().inputBorderColor
-		textInput.layer.borderWidth = RCMessages().inputBorderWidth
+//        textInput.layer.borderColor = RCMessages().inputBorderColor
+//        textInput.layer.borderWidth = RCMessages().inputBorderWidth
 
-		textInput.layer.cornerRadius = RCMessages().inputRadius
-		textInput.clipsToBounds = true
+//        textInput.layer.cornerRadius = RCMessages().inputRadius
+//        textInput.clipsToBounds = true
         
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func inputPanelUpdate() {
 
-		let heightView: CGFloat = view.frame.size.height
-		let widthView: CGFloat = view.frame.size.width
+//        let heightView: CGFloat = view.frame.size.height
+//        let widthView: CGFloat = view.frame.size.width
 
-		let leftSafe: CGFloat = view.safeAreaInsets.left
-		let rightSafe: CGFloat = view.safeAreaInsets.right
-		let bottomSafe: CGFloat = view.safeAreaInsets.bottom
+//        let leftSafe: CGFloat = view.safeAreaInsets.left
+//        let rightSafe: CGFloat = view.safeAreaInsets.right
+        let bottomSafe: CGFloat = view.safeAreaInsets.bottom
 
 		let widthText: CGFloat = textInput.frame.size.width
 		var heightText: CGFloat
-		let sizeText = textInput.sizeThatFits(CGSize(width: widthText, height: CGFloat.greatestFiniteMagnitude))
+        let sizeText = textInput.sizeThatFits(CGSize(width: widthText, height: CGFloat.greatestFiniteMagnitude))
 
-		heightText = CGFloat.maximum(RCMessages().inputTextHeightMin, sizeText.height)
-		heightText = CGFloat.minimum(RCMessages().inputTextHeightMax, heightText)
         
-		let heightInput: CGFloat = heightText + (RCMessages().inputViewHeightMin - RCMessages().inputTextHeightMin)
-
-		tableView.frame = CGRect(x: leftSafe, y: 0, width: widthView - leftSafe - rightSafe, height: heightView - bottomSafe - heightInput-scrollViewHeight)
-
-		var frameViewInput: CGRect = viewInput.frame
-		frameViewInput.origin.y = heightView - bottomSafe - heightInput
-		frameViewInput.size.height = heightInput
-		viewInput.frame = frameViewInput
-
-        var frameEditorView: CGRect = editorScrollView.frame
-        frameEditorView.origin.y = heightView - bottomSafe - heightInput - scrollViewHeight
-        editorScrollView.frame = frameEditorView
+        heightText = CGFloat.maximum(RCMessages().inputTextHeightMin, sizeText.height)
+        heightText = CGFloat.minimum(RCMessages().inputTextHeightMax, heightText)
         
-		viewInput.layoutIfNeeded()
+        viewHeightConstraint.constant = heightText + 14
+        viewBottomConstraint.constant = bottomSafe
+        buttonInputAttach.layer.cornerRadius = heightText/2;
+//        let heightInput: CGFloat = heightText + (RCMessages().inputViewHeightMin - RCMessages().inputTextHeightMin)
+//
+//        tableView.frame = CGRect(x: leftSafe, y: 0, width: widthView - leftSafe - rightSafe, height: heightView - bottomSafe - heightInput-scrollViewHeight)
+//
+//        var frameViewInput: CGRect = viewInput.frame
+//        frameViewInput.origin.y = heightView - bottomSafe - heightInput
+//        frameViewInput.size.height = heightInput
+//        viewInput.frame = frameViewInput
+//
+//        var frameEditorView: CGRect = editorScrollView.frame
+//        frameEditorView.origin.y = heightView - bottomSafe - heightInput - scrollViewHeight
+//        editorScrollView.frame = frameEditorView
+//
+//        viewInput.layoutIfNeeded()
 
 
-        var frameTextInput: CGRect = textInput.frame
-        frameTextInput.size.height = heightText
-        textInput.frame = frameTextInput
-        
-        var frameChatContainer: CGRect = chatInputContentView.frame
-        frameChatContainer.size.height = heightText
-        chatInputContentView.frame = frameChatContainer
-
-        var frameAttach: CGRect = buttonInputAttach.frame
-        frameAttach.origin.y = heightInput - frameAttach.size.height
-        buttonInputAttach.frame = frameAttach
-        
-        var frameSend: CGRect = buttonInputSend.frame
-        frameSend.origin.y = heightInput - frameSend.size.height
-        buttonInputSend.frame = frameSend
-        
-        var frameEmoticon: CGRect = emoticonBtn.frame
-        frameEmoticon.origin.y = heightInput - frameEmoticon.size.height
-        emoticonBtn.frame = frameEmoticon
+//        var frameTextInput: CGRect = textInput.frame
+//        frameTextInput.size.height = heightText
+//        textInput.frame = frameTextInput
+//
+//        var frameChatContainer: CGRect = chatInputContentView.frame
+//        frameChatContainer.size.height = heightText
+//        chatInputContentView.frame = frameChatContainer
+//
+//        var frameAttach: CGRect = buttonInputAttach.frame
+//        frameAttach.origin.y = heightInput - frameAttach.size.height
+//        buttonInputAttach.frame = frameAttach
+//
+//        var frameSend: CGRect = buttonInputSend.frame
+//        frameSend.origin.y = heightInput - frameSend.size.height
+//        buttonInputSend.frame = frameSend
+//
+//        var frameEmoticon: CGRect = emoticonBtn.frame
+//        frameEmoticon.origin.y = heightInput - frameEmoticon.size.height
+//        emoticonBtn.frame = frameEmoticon
 
 		buttonInputSend.isEnabled = textInput.html.count != 0
 
-		let offset = CGPoint(x: 0, y: sizeText.height - heightText)
+//        let offset = CGPoint(x: 0, y: sizeText.height - heightText)
 //        textInput.setContentOffset(offset, animated: false)
 
 		scroll(toBottom: false)

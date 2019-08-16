@@ -28,6 +28,8 @@
                 <outlet property="textInput" destination="Aea-iO-SfR" id="xbB-aC-7D4"/>
                 <outlet property="underLineBtn" destination="fl5-MW-vYF" id="GZL-W4-d82"/>
                 <outlet property="view" destination="PpO-Gc-0B7" id="ccK-Tu-foM"/>
+                <outlet property="viewBottomConstraint" destination="6Vs-HE-A35" id="Fdf-rt-gCL"/>
+                <outlet property="viewHeightConstraint" destination="Kca-U5-bhs" id="n1b-j4-ch1"/>
                 <outlet property="viewInput" destination="xuU-RB-86v" id="9Gh-xP-iGY"/>
                 <outlet property="viewLoadEarlier" destination="rme-m1-pJF" id="ibT-XO-YJi"/>
                 <outlet property="viewTitle" destination="JnQ-YJ-8Qj" id="BmF-pC-zYN"/>
@@ -51,10 +53,9 @@
                     <rect key="frame" x="0.0" y="826" width="441" height="55"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NM-CG-5bA">
-                            <rect key="frame" x="397" y="5.5" width="44" height="44"/>
+                            <rect key="frame" x="400" y="7" width="41" height="41"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="bg2-0p-wdW"/>
                                 <constraint firstAttribute="width" secondItem="0NM-CG-5bA" secondAttribute="height" multiplier="1:1" id="zvJ-X8-Xcf"/>
                             </constraints>
                             <state key="normal" image="chat_attachment.png"/>
@@ -63,7 +64,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kz5-fW-nZa">
-                            <rect key="frame" x="0.0" y="7" width="385" height="41"/>
+                            <rect key="frame" x="0.0" y="7" width="400" height="41"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErK-1i-YkL">
                                     <rect key="frame" x="10" y="5.5" width="30" height="30"/>
@@ -73,11 +74,14 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-iO-SfR" customClass="RichEditorView" customModule="RichEditorView">
-                                    <rect key="frame" x="45" y="0.0" width="295" height="41"/>
+                                    <rect key="frame" x="45" y="0.0" width="310" height="41"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="41" id="XNx-Ld-RW5"/>
+                                    </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-dQ-ykO">
-                                    <rect key="frame" x="345" y="5.5" width="30" height="30"/>
+                                    <rect key="frame" x="360" y="5.5" width="30" height="30"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="aaP-dQ-ykO" secondAttribute="height" multiplier="1:1" id="KUN-7z-a4q"/>
@@ -106,11 +110,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.85028792546948351" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="0NM-CG-5bA" firstAttribute="leading" secondItem="kz5-fW-nZa" secondAttribute="trailing" constant="12" id="EPB-1W-kLv"/>
+                        <constraint firstItem="0NM-CG-5bA" firstAttribute="leading" secondItem="kz5-fW-nZa" secondAttribute="trailing" id="EPB-1W-kLv"/>
                         <constraint firstAttribute="height" constant="55" id="Kca-U5-bhs"/>
                         <constraint firstAttribute="bottom" secondItem="kz5-fW-nZa" secondAttribute="bottom" constant="7" id="SAM-bS-FXc"/>
                         <constraint firstAttribute="trailing" secondItem="0NM-CG-5bA" secondAttribute="trailing" id="UBZ-MP-mZ5"/>
                         <constraint firstItem="kz5-fW-nZa" firstAttribute="top" secondItem="xuU-RB-86v" secondAttribute="top" constant="7" id="XjE-6a-ks9"/>
+                        <constraint firstItem="0NM-CG-5bA" firstAttribute="height" secondItem="kz5-fW-nZa" secondAttribute="height" id="XjT-kV-Lh6"/>
                         <constraint firstItem="0NM-CG-5bA" firstAttribute="centerY" secondItem="xuU-RB-86v" secondAttribute="centerY" id="l4E-e2-kIL"/>
                         <constraint firstItem="kz5-fW-nZa" firstAttribute="leading" secondItem="xuU-RB-86v" secondAttribute="leading" id="r72-Is-G5E"/>
                     </constraints>
