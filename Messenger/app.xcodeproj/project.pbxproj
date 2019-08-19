@@ -438,6 +438,7 @@
 		29EABE4E20ECAC3C00A13F26 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EABE4C20ECAC3C00A13F26 /* NavigationController.swift */; };
 		29FAEF4E20F396FC00E75BCD /* RCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEF4D20F396FC00E75BCD /* RCMessage.swift */; };
 		29FAEF5020F39A7A00E75BCD /* RCMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEF4F20F39A7A00E75BCD /* RCMessages.swift */; };
+		5491F912230AD62600C7F72B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5491F911230AD62600C7F72B /* GoogleService-Info.plist */; };
 		54E519E62306ADD400440CE4 /* h2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E519B22306ADD300440CE4 /* h2@2x.png */; };
 		54E519E72306ADD400440CE4 /* outdent.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E519B32306ADD300440CE4 /* outdent.png */; };
 		54E519E82306ADD400440CE4 /* text_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E519B42306ADD300440CE4 /* text_color@2x.png */; };
@@ -496,7 +497,6 @@
 		54E67B522305F44700F167B9 /* double_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B502305F44700F167B9 /* double_check@2x.png */; };
 		54E67B562305FE9700F167B9 /* chat_attachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E67B552305FE9700F167B9 /* chat_attachment@2x.png */; };
 		6C0888E250EDDE30BCA104EB /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A8835041C05399266378E9 /* Pods_app.framework */; };
-		F66451BD23081C980077886A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F66451BC23081C970077886A /* GoogleService-Info.plist */; };
 		F66451BF23086F1B0077886A /* 1-B.png in Resources */ = {isa = PBXBuildFile; fileRef = F66451BE23086F1B0077886A /* 1-B.png */; };
 		F66451D123086F3F0077886A /* 14-Backgrouund-color.png in Resources */ = {isa = PBXBuildFile; fileRef = F66451C023086F380077886A /* 14-Backgrouund-color.png */; };
 		F66451D223086F3F0077886A /* 16--Align-center.png in Resources */ = {isa = PBXBuildFile; fileRef = F66451C123086F380077886A /* 16--Align-center.png */; };
@@ -995,6 +995,7 @@
 		29EABE4C20ECAC3C00A13F26 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		29FAEF4D20F396FC00E75BCD /* RCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCMessage.swift; sourceTree = "<group>"; };
 		29FAEF4F20F39A7A00E75BCD /* RCMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCMessages.swift; sourceTree = "<group>"; };
+		5491F911230AD62600C7F72B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		54E519B22306ADD300440CE4 /* h2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h2@2x.png"; sourceTree = "<group>"; };
 		54E519B32306ADD300440CE4 /* outdent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdent.png; sourceTree = "<group>"; };
 		54E519B42306ADD300440CE4 /* text_color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_color@2x.png"; sourceTree = "<group>"; };
@@ -1055,7 +1056,6 @@
 		7393A6F3A4D6270AF7ACDCFA /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		AA3F4F54A03FBAE7CEC0B5DB /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		DED94DC0AC66CCD8277DB3AF /* app-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Prefix.pch"; sourceTree = "<group>"; };
-		F66451BC23081C970077886A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F66451BE23086F1B0077886A /* 1-B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-B.png"; sourceTree = "<group>"; };
 		F66451C023086F380077886A /* 14-Backgrouund-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14-Backgrouund-color.png"; sourceTree = "<group>"; };
 		F66451C123086F380077886A /* 16--Align-center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16--Align-center.png"; sourceTree = "<group>"; };
@@ -2323,7 +2323,7 @@
 		29D29EF31D9A59E4006CA074 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				F66451BC23081C970077886A /* GoogleService-Info.plist */,
+				5491F911230AD62600C7F72B /* GoogleService-Info.plist */,
 				295015181D9A5C1B00AFD8B3 /* app.entitlements */,
 				295018301D9A5CE600AFD8B3 /* AppConstant.h */,
 				29D29EF81D9A59E4006CA074 /* AppDelegate.swift */,
@@ -2852,6 +2852,7 @@
 				298990561F1B6FFD00AC73B3 /* stickersend62@2x.png in Resources */,
 				296021711F2CF5F600544468 /* StickersCell.xib in Resources */,
 				2960219F1F2CF5F600544468 /* WallpapersView.xib in Resources */,
+				5491F912230AD62600C7F72B /* GoogleService-Info.plist in Resources */,
 				29BB8FB41F5C266100560F3F /* editprofile_blank@2x.png in Resources */,
 				29898FFD1F1B6FFD00AC73B3 /* stickerlocal51@2x.png in Resources */,
 				296021851F2CF5F600544468 /* EditProfileView.xib in Resources */,
@@ -2934,7 +2935,6 @@
 				296021591F2CF5F600544468 /* CallAudioView.xib in Resources */,
 				54E519FA2306ADD400440CE4 /* h5.png in Resources */,
 				298990111F1B6FFD00AC73B3 /* stickerlocal71@2x.png in Resources */,
-				F66451BD23081C980077886A /* GoogleService-Info.plist in Resources */,
 				54E519F52306ADD400440CE4 /* ordered_list.png in Resources */,
 				29898FDC1F1B6FFD00AC73B3 /* stickerlocal18@2x.png in Resources */,
 				54E519EB2306ADD400440CE4 /* indent.png in Resources */,
