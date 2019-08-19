@@ -19,7 +19,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-
+    var isTextColor = false
     @IBOutlet weak var chatInputContentView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet var viewTitle: UIView!
@@ -89,7 +89,12 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
             [weak self] in
             if let _weakSelf = self, let selectedColor =  _weakSelf.view.backgroundColor{
                 
-                superSelf.textInput.setTextColor(selectedColor)
+                if (superSelf.isTextColor) {
+                    superSelf.textInput.setTextColor(selectedColor)
+                } else {
+                    superSelf.textInput.setTextBackgroundColor(selectedColor)
+                }
+                
                 _weakSelf.view.backgroundColor = UIColor.white
                 // TODO: You can do something here when EFColorPicker close.
                 print("EFColorPicker closed.")
@@ -268,9 +273,11 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
             textInput.redo()
             break
         case 5017: //text color
+            isTextColor = true
             presentColorPicker()
             break
         case 5018: //text background color
+            isTextColor = false
             presentColorPicker()
             break
         default:
