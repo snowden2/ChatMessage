@@ -38,15 +38,15 @@ class RCMessageCell: UITableViewCell {
             timeLabel.text = rcmessage.insertedTime
             timeLabel.font = timeLabel.font.withSize(10)
 
-            sendStatusImageView = UIImageView()
             
-            sendStatusImageView.image = rcmessage.sendStatus == "" ? UIImage() : rcmessage.sendStatus == TEXT_READ ? UIImage(named: "double_check") : UIImage(named: "one_check")
-            
-			viewBubble = UIView()
-			viewBubble.layer.cornerRadius = RCMessages().bubbleRadius
+            viewBubble = UIView()
+            viewBubble.layer.cornerRadius = RCMessages().bubbleRadius
             viewBubble.addSubview(timeLabel)
             
+            sendStatusImageView = UIImageView()
             if (rcmessage.outgoing) {
+                
+                sendStatusImageView.image = rcmessage.sendStatus == "" ? UIImage() : rcmessage.sendStatus == TEXT_READ ? UIImage(named: "double_check") : UIImage(named: "one_check")
                 viewBubble.addSubview(sendStatusImageView)
             }
 			contentView.addSubview(viewBubble)
