@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -240,7 +240,7 @@
                                         <constraint firstAttribute="width" constant="30" id="gHb-3X-8GZ"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="strikethrough.png"/>
+                                    <state key="normal" image="14-Backgrouund-color.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="4SG-G9-8Cp"/>
                                     </connections>
@@ -262,7 +262,7 @@
                                         <constraint firstAttribute="width" constant="30" id="aSZ-bo-HwK"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="14-Backgrouund-color.png"/>
+                                    <state key="normal" image="13-Font-color.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="LGV-P5-Xsp"/>
                                     </connections>
@@ -492,6 +492,7 @@
         <image name="1-B.png" width="24" height="24"/>
         <image name="10-H4.png" width="24" height="24"/>
         <image name="12-Link.png" width="24" height="24"/>
+        <image name="13-Font-color.png" width="24" height="24"/>
         <image name="14-Backgrouund-color.png" width="24" height="24"/>
         <image name="15-Align-left.png" width="24" height="24"/>
         <image name="16--Align-center.png" width="24" height="24"/>
@@ -508,7 +509,6 @@
         <image name="chat_emoticon.png" width="256" height="256"/>
         <image name="chat_send.png" width="256" height="256"/>
         <image name="redo.png" width="28" height="28"/>
-        <image name="strikethrough.png" width="28" height="28"/>
         <image name="undo.png" width="28" height="28"/>
     </resources>
 </document>
