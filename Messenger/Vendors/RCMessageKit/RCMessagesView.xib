@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -119,78 +119,68 @@
                     <rect key="frame" x="0.0" y="776" width="441" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qf-6B-wQG">
-                            <rect key="frame" x="0.0" y="0.0" width="610" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="575" height="50"/>
                             <subviews>
                                 <button opaque="NO" tag="5000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPd-pX-jjx">
                                     <rect key="frame" x="10" y="0.0" width="30" height="50"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="dLw-h0-RTa"/>
                                     </constraints>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="bold.png"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="1-B.png">
+                                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="PNa-It-xEx"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="5001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPo-Hg-A5B">
-                                    <rect key="frame" x="45" y="0.0" width="30" height="50"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="BFq-71-xdW"/>
-                                    </constraints>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="italic.png"/>
-                                    <connections>
-                                        <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="Mbd-XM-iOF"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="5002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fl5-MW-vYF">
-                                    <rect key="frame" x="80" y="0.0" width="30" height="50"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="INC-hx-nLN"/>
-                                    </constraints>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="underline.png"/>
-                                    <connections>
-                                        <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="inG-lf-u0y"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" clearsContextBeforeDrawing="NO" tag="5003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap0-FO-39e">
-                                    <rect key="frame" x="115" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="45" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="EwY-6s-8bG"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="subscript.png"/>
+                                    <state key="normal" image="2-D.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="aaH-2Q-Dcs"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-hG-p3a">
-                                    <rect key="frame" x="150" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="80" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="nhE-46-LbM"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="superscript.png"/>
+                                    <state key="normal" image="3-X.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="IO0-Yc-Ff3"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="5017" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pE-cx-1dI">
-                                    <rect key="frame" x="185" y="0.0" width="30" height="50"/>
+                                <button opaque="NO" tag="5001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPo-Hg-A5B">
+                                    <rect key="frame" x="115" y="0.0" width="30" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="aSZ-bo-HwK"/>
+                                        <constraint firstAttribute="width" constant="30" id="BFq-71-xdW"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="text_color.png"/>
+                                    <state key="normal" image="4-.png"/>
                                     <connections>
-                                        <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="LGV-P5-Xsp"/>
+                                        <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="Mbd-XM-iOF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fl5-MW-vYF">
+                                    <rect key="frame" x="150" y="0.0" width="30" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="INC-hx-nLN"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="5-U.png"/>
+                                    <connections>
+                                        <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="inG-lf-u0y"/>
                                     </connections>
                                 </button>
                                 <button hidden="YES" opaque="NO" tag="5018" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uh-tn-DLN">
-                                    <rect key="frame" x="220" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="185" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="cCv-tR-YjR"/>
                                     </constraints>
@@ -201,51 +191,51 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XId-gj-xye">
-                                    <rect key="frame" x="220" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="185" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="yTH-5r-xhz"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="h1.png"/>
+                                    <state key="normal" image="7-H1.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="fvL-kY-QrV"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQb-xa-I4Q">
-                                    <rect key="frame" x="255" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="220" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="suu-kk-XWY"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="h2.png"/>
+                                    <state key="normal" image="8-H2.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="Nex-ub-oJR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYH-Zi-kfg">
-                                    <rect key="frame" x="290" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="255" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="gFo-Cc-XAc"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="h3.png"/>
+                                    <state key="normal" image="9-H3.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="nd6-c0-Nsi"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-aH-Oks">
-                                    <rect key="frame" x="325" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="290" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="y2y-AY-7bB"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="h4.png"/>
+                                    <state key="normal" image="10-H4.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="OKZ-fC-JYW"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-xt-cB7">
-                                    <rect key="frame" x="360" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="325" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="gHb-3X-8GZ"/>
                                     </constraints>
@@ -255,52 +245,63 @@
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="4SG-G9-8Cp"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" tag="5017" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pE-cx-1dI">
+                                    <rect key="frame" x="210" y="0.0" width="30" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="aSZ-bo-HwK"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="14-Backgrouund-color.png"/>
+                                    <connections>
+                                        <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="LGV-P5-Xsp"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" tag="5010" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM1-Zx-Ae5">
-                                    <rect key="frame" x="395" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="360" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="f3J-m8-3rx"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="insert_link.png"/>
+                                    <state key="normal" image="12-Link.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="yN5-Dp-GHI"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugi-bH-mGy">
-                                    <rect key="frame" x="430" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="395" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="41J-22-Ugb"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="justify_left.png"/>
+                                    <state key="normal" image="15-Align-left.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="Pgk-wX-V0p"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5013" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVz-dX-9tL">
-                                    <rect key="frame" x="465" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="430" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="F3E-yt-tp2"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="justify_center.png"/>
+                                    <state key="normal" image="16--Align-center.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="ESq-sw-eYd"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5014" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-N7-Dgk">
-                                    <rect key="frame" x="500" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="465" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="bHK-J2-win"/>
                                     </constraints>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="justify_right.png"/>
+                                    <state key="normal" image="17-Align-right.png"/>
                                     <connections>
                                         <action selector="editorBtnsTapped:" destination="-1" eventType="touchUpInside" id="RDh-PL-duj"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5015" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J41-tK-3Ua">
-                                    <rect key="frame" x="535" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="500" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="LCs-DF-nNQ"/>
                                     </constraints>
@@ -311,7 +312,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5016" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-Sd-NyC">
-                                    <rect key="frame" x="570" y="0.0" width="30" height="50"/>
+                                    <rect key="frame" x="535" y="0.0" width="30" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="30" id="CQ0-uI-sHg"/>
                                     </constraints>
@@ -333,6 +334,7 @@
                                 <constraint firstItem="1pE-cx-1dI" firstAttribute="top" secondItem="2qf-6B-wQG" secondAttribute="top" id="5j9-P9-cwx"/>
                                 <constraint firstItem="OaF-hG-p3a" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="7D1-Tr-uXK"/>
                                 <constraint firstItem="PpZ-xt-cB7" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="7Gq-li-RN9"/>
+                                <constraint firstItem="dPo-Hg-A5B" firstAttribute="leading" secondItem="OaF-hG-p3a" secondAttribute="trailing" constant="5" id="7Z6-yD-FiR"/>
                                 <constraint firstItem="fQb-xa-I4Q" firstAttribute="leading" secondItem="XId-gj-xye" secondAttribute="trailing" constant="5" id="7vq-wO-rKc"/>
                                 <constraint firstItem="vNv-aH-Oks" firstAttribute="leading" secondItem="WYH-Zi-kfg" secondAttribute="trailing" constant="5" id="8Ja-fx-eWS"/>
                                 <constraint firstItem="NPd-pX-jjx" firstAttribute="leading" secondItem="2qf-6B-wQG" secondAttribute="leading" constant="10" id="95v-Yg-Dxm"/>
@@ -340,7 +342,7 @@
                                 <constraint firstItem="aVz-dX-9tL" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="Ad5-NR-P9l"/>
                                 <constraint firstItem="fl5-MW-vYF" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="AdY-Ha-9rg"/>
                                 <constraint firstItem="aVz-dX-9tL" firstAttribute="leading" secondItem="Ugi-bH-mGy" secondAttribute="trailing" constant="5" id="Ah7-gy-buu"/>
-                                <constraint firstItem="XId-gj-xye" firstAttribute="leading" secondItem="1pE-cx-1dI" secondAttribute="trailing" constant="5" id="CQ8-8o-RIc"/>
+                                <constraint firstItem="6Uh-tn-DLN" firstAttribute="leading" secondItem="fl5-MW-vYF" secondAttribute="trailing" constant="5" id="CbR-he-HNe"/>
                                 <constraint firstItem="J41-tK-3Ua" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="EJg-Zl-ffc"/>
                                 <constraint firstItem="Wt2-N7-Dgk" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="EYs-Yt-q8k"/>
                                 <constraint firstItem="J41-tK-3Ua" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="GUU-3Q-qk3"/>
@@ -351,8 +353,8 @@
                                 <constraint firstItem="dPo-Hg-A5B" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="MZg-WI-lUq"/>
                                 <constraint firstItem="6Uh-tn-DLN" firstAttribute="height" secondItem="2qf-6B-wQG" secondAttribute="height" id="NWS-IC-M9V"/>
                                 <constraint firstItem="Ugi-bH-mGy" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="Ni5-8H-jT8"/>
+                                <constraint firstItem="ap0-FO-39e" firstAttribute="leading" secondItem="NPd-pX-jjx" secondAttribute="trailing" constant="5" id="Nor-H0-CHx"/>
                                 <constraint firstItem="NPd-pX-jjx" firstAttribute="top" secondItem="2qf-6B-wQG" secondAttribute="top" id="Nvl-HH-g2c"/>
-                                <constraint firstItem="6Uh-tn-DLN" firstAttribute="leading" secondItem="1pE-cx-1dI" secondAttribute="trailing" constant="5" id="SCy-kw-YQu"/>
                                 <constraint firstItem="WYH-Zi-kfg" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="SoI-oq-g1x"/>
                                 <constraint firstItem="fVd-Sd-NyC" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="UFn-zN-P5m"/>
                                 <constraint firstItem="WYH-Zi-kfg" firstAttribute="leading" secondItem="fQb-xa-I4Q" secondAttribute="trailing" constant="5" id="V65-Iw-6uI"/>
@@ -362,11 +364,9 @@
                                 <constraint firstItem="XId-gj-xye" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="bqs-Gn-suG"/>
                                 <constraint firstItem="PpZ-xt-cB7" firstAttribute="leading" secondItem="vNv-aH-Oks" secondAttribute="trailing" constant="5" id="dHg-jQ-ddU"/>
                                 <constraint firstItem="WYH-Zi-kfg" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="dKE-k9-dHY"/>
-                                <constraint firstItem="ap0-FO-39e" firstAttribute="leading" secondItem="fl5-MW-vYF" secondAttribute="trailing" constant="5" id="eiF-b1-c9M"/>
                                 <constraint firstItem="fVd-Sd-NyC" firstAttribute="leading" secondItem="J41-tK-3Ua" secondAttribute="trailing" constant="5" id="f9i-kG-Mdk"/>
                                 <constraint firstItem="dPo-Hg-A5B" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="ghI-KK-vGn"/>
                                 <constraint firstItem="vNv-aH-Oks" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="gvn-vp-m4O"/>
-                                <constraint firstItem="dPo-Hg-A5B" firstAttribute="leading" secondItem="NPd-pX-jjx" secondAttribute="trailing" constant="5" id="i0O-fS-CtU"/>
                                 <constraint firstItem="Wt2-N7-Dgk" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="iF8-hh-1IR"/>
                                 <constraint firstItem="Ugi-bH-mGy" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="iTW-63-slc"/>
                                 <constraint firstItem="6Uh-tn-DLN" firstAttribute="top" secondItem="2qf-6B-wQG" secondAttribute="top" id="lfl-Lu-Rag"/>
@@ -374,8 +374,9 @@
                                 <constraint firstItem="WM1-Zx-Ae5" firstAttribute="leading" secondItem="PpZ-xt-cB7" secondAttribute="trailing" constant="5" id="mLd-Hh-ZJu"/>
                                 <constraint firstItem="XId-gj-xye" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="nng-kD-bnS"/>
                                 <constraint firstItem="ap0-FO-39e" firstAttribute="height" secondItem="NPd-pX-jjx" secondAttribute="height" id="nov-ug-fZ0"/>
-                                <constraint firstItem="1pE-cx-1dI" firstAttribute="leading" secondItem="OaF-hG-p3a" secondAttribute="trailing" constant="5" id="sQ3-cY-Eha"/>
+                                <constraint firstItem="1pE-cx-1dI" firstAttribute="leading" secondItem="OaF-hG-p3a" secondAttribute="trailing" constant="100" id="sQ3-cY-Eha"/>
                                 <constraint firstItem="OaF-hG-p3a" firstAttribute="leading" secondItem="ap0-FO-39e" secondAttribute="trailing" constant="5" id="sZ3-Qm-Pwu"/>
+                                <constraint firstItem="XId-gj-xye" firstAttribute="leading" secondItem="fl5-MW-vYF" secondAttribute="trailing" constant="5" id="tdf-zM-WgR"/>
                                 <constraint firstItem="fQb-xa-I4Q" firstAttribute="top" secondItem="NPd-pX-jjx" secondAttribute="top" id="uc6-9d-Q2r"/>
                                 <constraint firstItem="fl5-MW-vYF" firstAttribute="leading" secondItem="dPo-Hg-A5B" secondAttribute="trailing" constant="5" id="ztN-Bc-LIq"/>
                                 <constraint firstItem="Wt2-N7-Dgk" firstAttribute="leading" secondItem="aVz-dX-9tL" secondAttribute="trailing" constant="5" id="zzD-K3-hqy"/>
@@ -488,26 +489,26 @@
         </view>
     </objects>
     <resources>
+        <image name="1-B.png" width="24" height="24"/>
+        <image name="10-H4.png" width="24" height="24"/>
+        <image name="12-Link.png" width="24" height="24"/>
+        <image name="14-Backgrouund-color.png" width="24" height="24"/>
+        <image name="15-Align-left.png" width="24" height="24"/>
+        <image name="16--Align-center.png" width="24" height="24"/>
+        <image name="17-Align-right.png" width="24" height="24"/>
+        <image name="2-D.png" width="24" height="24"/>
+        <image name="3-X.png" width="24" height="24"/>
+        <image name="4-.png" width="24" height="24"/>
+        <image name="5-U.png" width="24" height="24"/>
+        <image name="7-H1.png" width="24" height="24"/>
+        <image name="8-H2.png" width="24" height="24"/>
+        <image name="9-H3.png" width="24" height="24"/>
         <image name="bg_color.png" width="28" height="28"/>
-        <image name="bold.png" width="28" height="28"/>
         <image name="chat_attachment.png" width="256" height="256"/>
         <image name="chat_emoticon.png" width="256" height="256"/>
         <image name="chat_send.png" width="256" height="256"/>
-        <image name="h1.png" width="28" height="28"/>
-        <image name="h2.png" width="28" height="28"/>
-        <image name="h3.png" width="28" height="28"/>
-        <image name="h4.png" width="28" height="28"/>
-        <image name="insert_link.png" width="28" height="28"/>
-        <image name="italic.png" width="28" height="28"/>
-        <image name="justify_center.png" width="28" height="28"/>
-        <image name="justify_left.png" width="28" height="28"/>
-        <image name="justify_right.png" width="28" height="28"/>
         <image name="redo.png" width="28" height="28"/>
         <image name="strikethrough.png" width="28" height="28"/>
-        <image name="subscript.png" width="28" height="28"/>
-        <image name="superscript.png" width="28" height="28"/>
-        <image name="text_color.png" width="28" height="28"/>
-        <image name="underline.png" width="28" height="28"/>
         <image name="undo.png" width="28" height="28"/>
     </resources>
 </document>
