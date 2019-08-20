@@ -426,6 +426,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 //        textInput.font = RCMessages().inputFont
         
 		textInput.setTextColor(RCMessages().inputTextTextColor)
+        textInput.setFontSize(6)
 //        textInput.textContainer.lineFragmentPadding = 0
 //        textInput.textContainerInset = RCMessages().inputInset
 

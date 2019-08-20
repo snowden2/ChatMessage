@@ -44,7 +44,7 @@ class RCTextMessageCell: RCMessageCell {
 
 		textView.textColor = rcmessage.incoming ? RCMessages().textTextColorIncoming : RCMessages().textTextColorOutgoing
 
-        let htmlData = NSString(string: "<div style='font-size:20px'>" + rcmessage.text + "</div>").data(using: String.Encoding.unicode.rawValue)
+        let htmlData = NSString(string: rcmessage.text).data(using: String.Encoding.unicode.rawValue)
         
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
         
@@ -86,6 +86,6 @@ class RCTextMessageCell: RCMessageCell {
 		let width = rect.size.width + RCMessages().textInsetLeft + RCMessages().textInsetRight
 		let height = rect.size.height + RCMessages().textInsetTop + RCMessages().textInsetBottom
 
-		return CGSize(width: CGFloat.maximum(width, RCMessages().textBubbleWidthMin), height: CGFloat.maximum(height, RCMessages().textBubbleHeightMin)*1.3)
+		return CGSize(width: CGFloat.maximum(width, RCMessages().textBubbleWidthMin), height: CGFloat.maximum(height, RCMessages().textBubbleHeightMin))
 	}
 }
