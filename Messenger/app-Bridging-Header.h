@@ -16,7 +16,7 @@
 
 #import "AppConstant.h"
 #import "utilities.h"
-
+#import "CJWWebView+HackishAccessoryHiding.h"
 // End Swiftify generated imports
 // -----------------------------------------------------------------------------
 

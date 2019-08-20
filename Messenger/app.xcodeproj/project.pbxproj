@@ -439,6 +439,22 @@
 		29FAEF4E20F396FC00E75BCD /* RCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEF4D20F396FC00E75BCD /* RCMessage.swift */; };
 		29FAEF5020F39A7A00E75BCD /* RCMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEF4F20F39A7A00E75BCD /* RCMessages.swift */; };
 		5491F912230AD62600C7F72B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5491F911230AD62600C7F72B /* GoogleService-Info.plist */; };
+		5491F929230C020200C7F72B /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5491F914230C020100C7F72B /* LICENSE.md */; };
+		5491F92A230C020200C7F72B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5491F915230C020100C7F72B /* README.md */; };
+		5491F92B230C020200C7F72B /* CJWWebView+HackishAccessoryHiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5491F918230C020100C7F72B /* CJWWebView+HackishAccessoryHiding.m */; };
+		5491F92C230C020200C7F72B /* RichEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491F919230C020100C7F72B /* RichEditorView.swift */; };
+		5491F92D230C020200C7F72B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491F91A230C020100C7F72B /* String+Extensions.swift */; };
+		5491F92E230C020200C7F72B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491F91B230C020100C7F72B /* UIColor+Extensions.swift */; };
+		5491F92F230C020200C7F72B /* RichEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491F91C230C020100C7F72B /* RichEditorToolbar.swift */; };
+		5491F930230C020200C7F72B /* RichEditorOptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491F91D230C020100C7F72B /* RichEditorOptionItem.swift */; };
+		5491F931230C020200C7F72B /* UIView+Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491F91E230C020100C7F72B /* UIView+Responder.swift */; };
+		5491F932230C020200C7F72B /* rich_editor_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = 5491F922230C020100C7F72B /* rich_editor_tests.js */; };
+		5491F933230C020200C7F72B /* assert.js in Resources */ = {isa = PBXBuildFile; fileRef = 5491F923230C020100C7F72B /* assert.js */; };
+		5491F934230C020200C7F72B /* rich_editor.js in Resources */ = {isa = PBXBuildFile; fileRef = 5491F924230C020100C7F72B /* rich_editor.js */; };
+		5491F935230C020200C7F72B /* rich_editor_tests.html in Resources */ = {isa = PBXBuildFile; fileRef = 5491F925230C020100C7F72B /* rich_editor_tests.html */; };
+		5491F936230C020200C7F72B /* rich_editor.html in Resources */ = {isa = PBXBuildFile; fileRef = 5491F926230C020100C7F72B /* rich_editor.html */; };
+		5491F937230C020200C7F72B /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5491F927230C020100C7F72B /* style.css */; };
+		5491F938230C020200C7F72B /* normalize.css in Resources */ = {isa = PBXBuildFile; fileRef = 5491F928230C020100C7F72B /* normalize.css */; };
 		54E519E62306ADD400440CE4 /* h2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E519B22306ADD300440CE4 /* h2@2x.png */; };
 		54E519E72306ADD400440CE4 /* outdent.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E519B32306ADD300440CE4 /* outdent.png */; };
 		54E519E82306ADD400440CE4 /* text_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E519B42306ADD300440CE4 /* text_color@2x.png */; };
@@ -996,6 +1012,23 @@
 		29FAEF4D20F396FC00E75BCD /* RCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCMessage.swift; sourceTree = "<group>"; };
 		29FAEF4F20F39A7A00E75BCD /* RCMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCMessages.swift; sourceTree = "<group>"; };
 		5491F911230AD62600C7F72B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5491F914230C020100C7F72B /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		5491F915230C020100C7F72B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5491F918230C020100C7F72B /* CJWWebView+HackishAccessoryHiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJWWebView+HackishAccessoryHiding.m"; sourceTree = "<group>"; };
+		5491F919230C020100C7F72B /* RichEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichEditorView.swift; sourceTree = "<group>"; };
+		5491F91A230C020100C7F72B /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5491F91B230C020100C7F72B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		5491F91C230C020100C7F72B /* RichEditorToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichEditorToolbar.swift; sourceTree = "<group>"; };
+		5491F91D230C020100C7F72B /* RichEditorOptionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichEditorOptionItem.swift; sourceTree = "<group>"; };
+		5491F91E230C020100C7F72B /* UIView+Responder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Responder.swift"; sourceTree = "<group>"; };
+		5491F91F230C020100C7F72B /* CJWWebView+HackishAccessoryHiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJWWebView+HackishAccessoryHiding.h"; sourceTree = "<group>"; };
+		5491F922230C020100C7F72B /* rich_editor_tests.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rich_editor_tests.js; sourceTree = "<group>"; };
+		5491F923230C020100C7F72B /* assert.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = assert.js; sourceTree = "<group>"; };
+		5491F924230C020100C7F72B /* rich_editor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rich_editor.js; sourceTree = "<group>"; };
+		5491F925230C020100C7F72B /* rich_editor_tests.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rich_editor_tests.html; sourceTree = "<group>"; };
+		5491F926230C020100C7F72B /* rich_editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rich_editor.html; sourceTree = "<group>"; };
+		5491F927230C020100C7F72B /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		5491F928230C020100C7F72B /* normalize.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = normalize.css; sourceTree = "<group>"; };
 		54E519B22306ADD300440CE4 /* h2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h2@2x.png"; sourceTree = "<group>"; };
 		54E519B32306ADD300440CE4 /* outdent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdent.png; sourceTree = "<group>"; };
 		54E519B42306ADD300440CE4 /* text_color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_color@2x.png"; sourceTree = "<group>"; };
@@ -1818,6 +1851,7 @@
 		2983F9971E49E4B5004AC81F /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				5491F913230C020100C7F72B /* RichEditorView */,
 				29D7601320EFD49D006C7148 /* RCMessageKit */,
 				29104BBD20EFC21B003BD623 /* RCAudioPlayer */,
 				2974C6C721EA91AB00E173F1 /* SinchService */,
@@ -2478,6 +2512,62 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		5491F913230C020100C7F72B /* RichEditorView */ = {
+			isa = PBXGroup;
+			children = (
+				5491F914230C020100C7F72B /* LICENSE.md */,
+				5491F915230C020100C7F72B /* README.md */,
+				5491F916230C020100C7F72B /* RichEditorView */,
+			);
+			path = RichEditorView;
+			sourceTree = "<group>";
+		};
+		5491F916230C020100C7F72B /* RichEditorView */ = {
+			isa = PBXGroup;
+			children = (
+				5491F917230C020100C7F72B /* Classes */,
+				5491F920230C020100C7F72B /* Assets */,
+			);
+			path = RichEditorView;
+			sourceTree = "<group>";
+		};
+		5491F917230C020100C7F72B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5491F918230C020100C7F72B /* CJWWebView+HackishAccessoryHiding.m */,
+				5491F919230C020100C7F72B /* RichEditorView.swift */,
+				5491F91A230C020100C7F72B /* String+Extensions.swift */,
+				5491F91B230C020100C7F72B /* UIColor+Extensions.swift */,
+				5491F91C230C020100C7F72B /* RichEditorToolbar.swift */,
+				5491F91D230C020100C7F72B /* RichEditorOptionItem.swift */,
+				5491F91E230C020100C7F72B /* UIView+Responder.swift */,
+				5491F91F230C020100C7F72B /* CJWWebView+HackishAccessoryHiding.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5491F920230C020100C7F72B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5491F921230C020100C7F72B /* editor */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5491F921230C020100C7F72B /* editor */ = {
+			isa = PBXGroup;
+			children = (
+				5491F922230C020100C7F72B /* rich_editor_tests.js */,
+				5491F923230C020100C7F72B /* assert.js */,
+				5491F924230C020100C7F72B /* rich_editor.js */,
+				5491F925230C020100C7F72B /* rich_editor_tests.html */,
+				5491F926230C020100C7F72B /* rich_editor.html */,
+				5491F927230C020100C7F72B /* style.css */,
+				5491F928230C020100C7F72B /* normalize.css */,
+			);
+			path = editor;
+			sourceTree = "<group>";
+		};
 		54E519B12306ADD300440CE4 /* chateditor */ = {
 			isa = PBXGroup;
 			children = (
@@ -2667,6 +2757,7 @@
 				298990211F1B6FFD00AC73B3 /* stickersend09@2x.png in Resources */,
 				2974641D1FDF01100038D976 /* chats_dialogflow@2x.png in Resources */,
 				298990681F1B6FFD00AC73B3 /* wallpapers02@2x.jpg in Resources */,
+				5491F938230C020200C7F72B /* normalize.css in Resources */,
 				298990001F1B6FFD00AC73B3 /* stickerlocal54@2x.png in Resources */,
 				296021871F2CF5F600544468 /* PasswordView.xib in Resources */,
 				298990401F1B6FFD00AC73B3 /* stickersend40@2x.png in Resources */,
@@ -2699,6 +2790,7 @@
 				29898FCE1F1B6FFD00AC73B3 /* stickerlocal04@2x.png in Resources */,
 				54E519E72306ADD400440CE4 /* outdent.png in Resources */,
 				2989904D1F1B6FFD00AC73B3 /* stickersend53@2x.png in Resources */,
+				5491F934230C020200C7F72B /* rich_editor.js in Resources */,
 				2989903E1F1B6FFD00AC73B3 /* stickersend38@2x.png in Resources */,
 				54E51A102306ADD400440CE4 /* redo@2x.png in Resources */,
 				2920B1882030AD3500DB6E07 /* AudioView.xib in Resources */,
@@ -2785,6 +2877,7 @@
 				298990411F1B6FFD00AC73B3 /* stickersend41@2x.png in Resources */,
 				29898FE11F1B6FFD00AC73B3 /* stickerlocal23@2x.png in Resources */,
 				298990631F1B6FFD00AC73B3 /* stickersend75@2x.png in Resources */,
+				5491F932230C020200C7F72B /* rich_editor_tests.js in Resources */,
 				2989905B1F1B6FFD00AC73B3 /* stickersend67@2x.png in Resources */,
 				29BB8FBA1F5C266100560F3F /* people_blank@2x.png in Resources */,
 				2989901B1F1B6FFD00AC73B3 /* stickersend03@2x.png in Resources */,
@@ -2809,6 +2902,7 @@
 				29D7606C20EFD4DF006C7148 /* rcmessage_send@2x.png in Resources */,
 				298990061F1B6FFD00AC73B3 /* stickerlocal60@2x.png in Resources */,
 				295D93992094AAF300A222CA /* GroupView.xib in Resources */,
+				5491F933230C020200C7F72B /* assert.js in Resources */,
 				2989901D1F1B6FFD00AC73B3 /* stickersend05@2x.png in Resources */,
 				29BB8FC11F5C266100560F3F /* selectusers_blank@2x.png in Resources */,
 				29C299631F8A647B00DB8BF0 /* addfriends_blank@2x.png in Resources */,
@@ -2918,10 +3012,13 @@
 				29898FC81F1B6FFD00AC73B3 /* countries.plist in Resources */,
 				54E519F42306ADD400440CE4 /* h4@2x.png in Resources */,
 				296021F61F2CF5F600544468 /* WelcomeView.xib in Resources */,
+				5491F937230C020200C7F72B /* style.css in Resources */,
+				5491F929230C020200C7F72B /* LICENSE.md in Resources */,
 				2989902E1F1B6FFD00AC73B3 /* stickersend22@2x.png in Resources */,
 				29898FF31F1B6FFD00AC73B3 /* stickerlocal41@2x.png in Resources */,
 				54E67B4023057F1000F167B9 /* chat_emoticon@2x.png in Resources */,
 				F66451D223086F3F0077886A /* 16--Align-center.png in Resources */,
+				5491F92A230C020200C7F72B /* README.md in Resources */,
 				29898FF51F1B6FFD00AC73B3 /* stickerlocal43@2x.png in Resources */,
 				29898FCA1F1B6FFD00AC73B3 /* call_ringback.wav in Resources */,
 				2989902B1F1B6FFD00AC73B3 /* stickersend19@2x.png in Resources */,
@@ -2950,6 +3047,7 @@
 				29BB8FAF1F5C266100560F3F /* chat_sticker@2x.png in Resources */,
 				2989903C1F1B6FFD00AC73B3 /* stickersend36@2x.png in Resources */,
 				54E519E82306ADD400440CE4 /* text_color@2x.png in Resources */,
+				5491F935230C020200C7F72B /* rich_editor_tests.html in Resources */,
 				296021511F2CF5F600544468 /* AllMediaView.xib in Resources */,
 				298990341F1B6FFD00AC73B3 /* stickersend28@2x.png in Resources */,
 				54E67B3E23057F1000F167B9 /* chat_send@2x.png in Resources */,
@@ -2991,6 +3089,7 @@
 				29BB8FA31F5C266100560F3F /* callvideo_blank@2x.png in Resources */,
 				296021AB1F2CF5F600544468 /* SettingsView.xib in Resources */,
 				29898FDF1F1B6FFD00AC73B3 /* stickerlocal21@2x.png in Resources */,
+				5491F936230C020200C7F72B /* rich_editor.html in Resources */,
 				29898FEA1F1B6FFD00AC73B3 /* stickerlocal32@2x.png in Resources */,
 				295D9378209492B000A222CA /* groups_blank@2x.png in Resources */,
 				29BB8FA61F5C266100560F3F /* callvideo_mute2@2x.png in Resources */,
@@ -3034,7 +3133,6 @@
 				"${BUILT_PRODUCTS_DIR}/RNCryptor-objc/RNCryptor_objc.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SoundManager/SoundManager.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -3053,7 +3151,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor_objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SoundManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -3092,10 +3189,12 @@
 				296021921F2CF5F600544468 /* ArchiveView.swift in Sources */,
 				2921ADC01F8BA13500B70B2F /* DBFriend.swift in Sources */,
 				295D93872094930400A222CA /* CreateGroupView.swift in Sources */,
+				5491F92E230C020200C7F72B /* UIColor+Extensions.swift in Sources */,
 				296021471F2CF5F600544468 /* ChatPrivateView.swift in Sources */,
 				29D7605320EFD49D006C7148 /* RCMenuItem.swift in Sources */,
 				296021701F2CF5F600544468 /* StickersCell.swift in Sources */,
 				296021661F2CF5F600544468 /* SelectUserCell.swift in Sources */,
+				5491F931230C020200C7F72B /* UIView+Responder.swift in Sources */,
 				296021C41F2CF5F600544468 /* push.swift in Sources */,
 				29D7607A20EFD552006C7148 /* RCMessagesView.swift in Sources */,
 				2974C70421EA91AB00E173F1 /* SINSLazyAudioController.m in Sources */,
@@ -3172,10 +3271,12 @@
 				2921ADC31F8BA1E700B70B2F /* Friends.swift in Sources */,
 				2960218C1F2CF5F600544468 /* BlockedCell.swift in Sources */,
 				29D29EF91D9A59E4006CA074 /* AppDelegate.swift in Sources */,
+				5491F92D230C020200C7F72B /* String+Extensions.swift in Sources */,
 				2920B18B2030AD3500DB6E07 /* AudioView.swift in Sources */,
 				296021B41F2CF5F600544468 /* NSError+Util.swift in Sources */,
 				295C70C21FE0486700109DF0 /* DialogflowView.swift in Sources */,
 				29AA54BD20D3B3DA004067FE /* RelayManager.swift in Sources */,
+				5491F92C230C020200C7F72B /* RichEditorView.swift in Sources */,
 				294E496D1F8A6AA800045345 /* AddFriendsCell.swift in Sources */,
 				29D7605920EFD49D006C7148 /* RCAudioMessageCell.swift in Sources */,
 				29CAE58720971787000D857D /* ChatGroupView.swift in Sources */,
@@ -3184,8 +3285,10 @@
 				29DC391A20EF76E1004E41BE /* FUser+Util.swift in Sources */,
 				296021621F2CF5F600544468 /* SelectUsersCell.swift in Sources */,
 				29D7605820EFD49D006C7148 /* RCVideoMessageCell.swift in Sources */,
+				5491F92B230C020200C7F72B /* CJWWebView+HackishAccessoryHiding.m in Sources */,
 				2960214E1F2CF5F600544468 /* AllMediaHeader.swift in Sources */,
 				2974C70221EA91AB00E173F1 /* SinchService.m in Sources */,
+				5491F92F230C020200C7F72B /* RichEditorToolbar.swift in Sources */,
 				296021F31F2CF5F600544468 /* RegisterEmailView.swift in Sources */,
 				29D7605A20EFD49D006C7148 /* RCLocationMessageCell.swift in Sources */,
 				296021A21F2CF5F600544468 /* TermsView.swift in Sources */,
@@ -3215,6 +3318,7 @@
 				296021861F2CF5F600544468 /* PasswordView.swift in Sources */,
 				29E76AC420DE517B00572BBC /* GroupView.swift in Sources */,
 				296021531F2CF5F600544468 /* VideoView.swift in Sources */,
+				5491F930230C020200C7F72B /* RichEditorOptionItem.swift in Sources */,
 				2974C70121EA91AB00E173F1 /* SINSServicePersistence.m in Sources */,
 				296021D51F2CF5F600544468 /* Video.swift in Sources */,
 				296021B91F2CF5F600544468 /* Messages.swift in Sources */,

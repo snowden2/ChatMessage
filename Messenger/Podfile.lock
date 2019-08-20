@@ -105,7 +105,6 @@ PODS:
   - Realm (3.17.3):
     - Realm/Headers (= 3.17.3)
   - Realm/Headers (3.17.3)
-  - RichEditorView (5.0.0)
   - RNCryptor-objc (3.0.6)
   - SinchRTC (3.12.9)
   - SoundManager (1.4.2)
@@ -124,7 +123,6 @@ DEPENDENCIES:
   - ProgressHUD
   - Reachability
   - Realm
-  - RichEditorView
   - RNCryptor-objc
   - SinchRTC
   - SoundManager
@@ -158,7 +156,6 @@ SPEC REPOS:
     - ProgressHUD
     - Reachability
     - Realm
-    - RichEditorView
     - RNCryptor-objc
     - SinchRTC
     - SoundManager
@@ -191,11 +188,10 @@ SPEC CHECKSUMS:
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
-  RichEditorView: 1bbb07b87ca2d479ac29a6877014b38b8df233ef
   RNCryptor-objc: d1b228f9c02e2173df063f0617684c134aed890e
   SinchRTC: ed769fd3fec5940e6b75ed310e93796d62149810
   SoundManager: 99ae328a3ec9b259db774c9851a65feeceba8183
 
-PODFILE CHECKSUM: f693b87a43881d665fd251cd4736569960b5f8d7
+PODFILE CHECKSUM: c3e9df855708b6a36108ac8bbc355d07828b14e2
 
 COCOAPODS: 1.6.1

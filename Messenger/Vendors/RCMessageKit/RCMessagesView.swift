@@ -10,7 +10,6 @@
 // THE SOFTWARE.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-import RichEditorView
 import EFColorPicker
 
 class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, RichEditorDelegate,StickersDelegate,EFColorSelectionViewControllerDelegate {
