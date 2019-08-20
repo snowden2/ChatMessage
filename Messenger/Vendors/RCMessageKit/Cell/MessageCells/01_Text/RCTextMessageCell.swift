@@ -16,7 +16,10 @@ class RCTextMessageCell: RCMessageCell {
 
 	private var indexPath: IndexPath!
 	private var messagesView: RCMessagesView!
-
+    var htmlHeadStr = "<html><head><style type=\"text/css\">" +
+    "body{font-size:20px;font-family: 'HelveticaNeue';h1{font-size: 36px;}h2{font-size: 32px;}h3{font-size: 28px;}h4{font-size: 24px;}}</style></head><body>"
+    var htmlFoodStr = "</body></html>"
+    var fontSize = 20
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc override func bindData(_ indexPath_: IndexPath, messagesView messagesView_: RCMessagesView) {
 
@@ -44,7 +47,11 @@ class RCTextMessageCell: RCMessageCell {
 
 		textView.textColor = rcmessage.incoming ? RCMessages().textTextColorIncoming : RCMessages().textTextColorOutgoing
 
-        let htmlData = NSString(string: rcmessage.text).data(using: String.Encoding.unicode.rawValue)
+        var htmlStr = htmlHeadStr
+        htmlStr += rcmessage.text
+        htmlStr += htmlFoodStr
+        
+        let htmlData = NSString(string: htmlStr).data(using: String.Encoding.unicode.rawValue)
         
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
         
@@ -79,9 +86,19 @@ class RCTextMessageCell: RCMessageCell {
 
 		let widthTable = messagesView.tableView.frame.size.width
 
-		let maxwidth = (0.6 * widthTable) - RCMessages().textInsetLeft - RCMessages().textInsetRight
+		let maxwidth = (0.75 * widthTable) - RCMessages().textInsetLeft - RCMessages().textInsetRight
 
-		let rect = rcmessage.text.boundingRect(with: CGSize(width: maxwidth, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: RCMessages().textFont], context: nil)
+        var fontSize = 20
+        if rcmessage.text.contains("<h1>") {
+            fontSize = 36
+        } else if rcmessage.text.contains("<h2>") {
+            fontSize = 32
+        } else if rcmessage.text.contains("<h3>") {
+            fontSize = 28
+        } else if rcmessage.text.contains("<h4>") {
+            fontSize = 24
+        }
+        let rect = rcmessage.text.boundingRect(with: CGSize(width: maxwidth, height: CGFloat.greatestFiniteMagnitude), options: .usesFontLeading, attributes: [NSAttributedString.Key.font: UIFont.init(name: "HelveticaNeue", size: CGFloat(fontSize)) ??  UIFont.systemFont(ofSize: CGFloat(fontSize))], context: nil)
 
 		let width = rect.size.width + RCMessages().textInsetLeft + RCMessages().textInsetRight
 		let height = rect.size.height + RCMessages().textInsetTop + RCMessages().textInsetBottom

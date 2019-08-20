@@ -91,7 +91,7 @@ import UIKit
 	var textTextColorOutgoing: UIColor		= UIColor.white
 	var textTextColorIncoming: UIColor		= UIColor.black
 
-	var textFont: UIFont					= UIFont.systemFont(ofSize: 16)
+    var textFont: UIFont					= UIFont.init(name: "HelveticaNeue", size: 20) ??  UIFont.systemFont(ofSize: 20)
 
 	var textInsetLeft: CGFloat				= 10.0
 	var textInsetRight: CGFloat				= 10.0
